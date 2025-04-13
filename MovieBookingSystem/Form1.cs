@@ -28,10 +28,16 @@ namespace MovieBookingSystem
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {    
+        {
+            Form1 form = new Form1();
+            form.Hide();
             userControl11.Show();
             userControl21.Hide();
             UpdateButtonColor(button1);
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+
+           
         }
         Button selectedButton = null;
         private void button2_Click(object sender, EventArgs e)
