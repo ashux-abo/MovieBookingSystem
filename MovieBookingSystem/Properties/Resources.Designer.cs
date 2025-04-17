@@ -63,6 +63,16 @@ namespace MovieBookingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hamburger {
+            get {
+                object obj = ResourceManager.GetObject("hamburger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -76,6 +86,16 @@ namespace MovieBookingSystem.Properties {
         internal static System.Drawing.Bitmap minecraftpost {
             get {
                 object obj = ResourceManager.GetObject("minecraftpost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spidermanposter {
+            get {
+                object obj = ResourceManager.GetObject("spidermanposter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

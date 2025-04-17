@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MovieBookingSystem
@@ -17,57 +11,85 @@ namespace MovieBookingSystem
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Hide();
-            userControl11.Show();
-            userControl21.Hide();
-            UpdateButtonColor(button1);
-            LoginPage loginPage = new LoginPage();
-            loginPage.Show();
-
-           
-        }
-        Button selectedButton = null;
-        private void button2_Click(object sender, EventArgs e)
-        {
-            userControl11.Hide();
-            userControl21.Show();
-            userControl21.BringToFront();
-            UpdateButtonColor(button2);
+            guna2Panel1.Location = new Point(this.Width, 40); 
+            guna2Panel1.Visible = true;
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
-            userControl21.Hide();
-            userControl11.Show();
-            userControl11.BringToFront();
-            button1.BackColor = Color.Yellow;
-            UpdateButtonColor(button1);
+
+
         }
-        private void UpdateButtonColor(Button button)
+        private bool isSideBarExpanded = false; 
+        private const int SidebarWidth = 200; 
+
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
-            if (selectedButton != null)
+            timeSideBar.Interval = 10;
+            timeSideBar.Start(); 
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void timeSideBar_Tick(object sender, EventArgs e)
+        {
+            int step = 20; 
+            if (isSideBarExpanded)
             {
-                selectedButton.BackColor = Color.LightGray; 
+                guna2Panel1.Location = new Point(guna2Panel1.Location.X + step, guna2Panel1.Location.Y);
+                if (guna2Panel1.Location.X >= this.Width) 
+                {
+                    timeSideBar.Stop();
+                    isSideBarExpanded = false;
+                }
             }
+            else
+            {
+                guna2Panel1.Location = new Point(guna2Panel1.Location.X - step, guna2Panel1.Location.Y);
+                if (guna2Panel1.Location.X <= this.Width - SidebarWidth) 
+                {
+                    timeSideBar.Stop();
+                    isSideBarExpanded = true;
+                }
 
-           
-            selectedButton = button;
-            button.BackColor = Color.Yellow; 
+            }
         }
 
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            string search;
+            search = guna2TextBox1.Text;
+
+           
+        }
+
+        private void guna2TextBox1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                string search = guna2TextBox1.Text.Trim();
+                if (string.IsNullOrWhiteSpace(search))
+                {
+                    MessageBox.Show("Please enter a search term.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+        }
     }
 }
