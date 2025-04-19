@@ -35,7 +35,7 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SideTitle = new System.Windows.Forms.Label();
-            this.RegisterPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LoginPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.Email = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -102,25 +102,25 @@
             this.SideTitle.TabIndex = 19;
             this.SideTitle.Text = "Don\'t have an Account?";
             // 
-            // RegisterPassword
+            // LoginPassword
             // 
-            this.RegisterPassword.BorderRadius = 10;
-            this.RegisterPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegisterPassword.DefaultText = "";
-            this.RegisterPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegisterPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegisterPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegisterPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegisterPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegisterPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegisterPassword.Location = new System.Drawing.Point(387, 242);
-            this.RegisterPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegisterPassword.Name = "RegisterPassword";
-            this.RegisterPassword.PlaceholderText = "Password";
-            this.RegisterPassword.SelectedText = "";
-            this.RegisterPassword.Size = new System.Drawing.Size(294, 36);
-            this.RegisterPassword.TabIndex = 15;
+            this.LoginPassword.BorderRadius = 10;
+            this.LoginPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LoginPassword.DefaultText = "";
+            this.LoginPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.LoginPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.LoginPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LoginPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LoginPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LoginPassword.Font = new System.Drawing.Font("Poppins", 9F);
+            this.LoginPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LoginPassword.Location = new System.Drawing.Point(387, 242);
+            this.LoginPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LoginPassword.Name = "LoginPassword";
+            this.LoginPassword.PlaceholderText = "Password";
+            this.LoginPassword.SelectedText = "";
+            this.LoginPassword.Size = new System.Drawing.Size(294, 36);
+            this.LoginPassword.TabIndex = 15;
             // 
             // Email
             // 
@@ -221,7 +221,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.SideTitle);
-            this.Controls.Add(this.RegisterPassword);
+            this.Controls.Add(this.LoginPassword);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel2);
@@ -244,7 +244,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label SideTitle;
-        private Guna.UI2.WinForms.Guna2TextBox RegisterPassword;
+        private Guna.UI2.WinForms.Guna2TextBox LoginPassword;
         private Guna.UI2.WinForms.Guna2TextBox Email;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
