@@ -59,6 +59,7 @@
             // 
             // FirstName
             // 
+            this.FirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FirstName.BorderRadius = 10;
             this.FirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FirstName.DefaultText = "";
@@ -69,7 +70,7 @@
             this.FirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FirstName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FirstName.Location = new System.Drawing.Point(384, 159);
+            this.FirstName.Location = new System.Drawing.Point(386, 157);
             this.FirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FirstName.Name = "FirstName";
             this.FirstName.PlaceholderText = "First name";
@@ -79,6 +80,7 @@
             // 
             // LastName
             // 
+            this.LastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LastName.BorderRadius = 10;
             this.LastName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LastName.DefaultText = "";
@@ -89,7 +91,7 @@
             this.LastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LastName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LastName.Location = new System.Drawing.Point(534, 159);
+            this.LastName.Location = new System.Drawing.Point(536, 157);
             this.LastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastName.Name = "LastName";
             this.LastName.PlaceholderText = "Last name";
@@ -100,6 +102,7 @@
             // 
             // Email
             // 
+            this.Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Email.BorderRadius = 10;
             this.Email.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Email.DefaultText = "";
@@ -110,7 +113,7 @@
             this.Email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Email.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Email.Location = new System.Drawing.Point(384, 201);
+            this.Email.Location = new System.Drawing.Point(386, 199);
             this.Email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Email.Name = "Email";
             this.Email.PlaceholderText = "Email";
@@ -120,6 +123,7 @@
             // 
             // RegisterPassword
             // 
+            this.RegisterPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterPassword.BorderRadius = 10;
             this.RegisterPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.RegisterPassword.DefaultText = "";
@@ -130,7 +134,7 @@
             this.RegisterPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.RegisterPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegisterPassword.Location = new System.Drawing.Point(384, 243);
+            this.RegisterPassword.Location = new System.Drawing.Point(386, 241);
             this.RegisterPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RegisterPassword.Name = "RegisterPassword";
             this.RegisterPassword.PlaceholderText = "Password";
@@ -140,6 +144,7 @@
             // 
             // guna2CheckBox1
             // 
+            this.guna2CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2CheckBox1.AutoSize = true;
             this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -148,7 +153,7 @@
             this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.guna2CheckBox1.Location = new System.Drawing.Point(384, 289);
+            this.guna2CheckBox1.Location = new System.Drawing.Point(386, 287);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
             this.guna2CheckBox1.Size = new System.Drawing.Size(224, 23);
             this.guna2CheckBox1.TabIndex = 4;
@@ -161,6 +166,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -168,7 +174,7 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Poppins", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(384, 324);
+            this.guna2Button1.Location = new System.Drawing.Point(386, 322);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(294, 45);
             this.guna2Button1.TabIndex = 5;
@@ -177,11 +183,12 @@
             // 
             // Title
             // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("Poppins SemiBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.Title.Location = new System.Drawing.Point(380, 66);
+            this.Title.Location = new System.Drawing.Point(382, 64);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(299, 51);
             this.Title.TabIndex = 8;
@@ -189,10 +196,11 @@
             // 
             // SideTitle
             // 
+            this.SideTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SideTitle.AutoSize = true;
             this.SideTitle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SideTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.SideTitle.Location = new System.Drawing.Point(384, 119);
+            this.SideTitle.Location = new System.Drawing.Point(386, 117);
             this.SideTitle.Name = "SideTitle";
             this.SideTitle.Size = new System.Drawing.Size(152, 19);
             this.SideTitle.TabIndex = 9;
@@ -264,10 +272,11 @@
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(531, 118);
+            this.linkLabel1.Location = new System.Drawing.Point(533, 116);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(38, 19);
             this.linkLabel1.TabIndex = 12;
@@ -277,10 +286,11 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox1.BorderRadius = 10;
             this.guna2PictureBox1.Image = global::MovieBookingSystem.Properties.Resources.spidermanposter;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(10, 42);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 40);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(307, 454);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
