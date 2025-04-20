@@ -93,6 +93,7 @@
             // 
             // SideTitle
             // 
+            this.SideTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SideTitle.AutoSize = true;
             this.SideTitle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SideTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
@@ -104,6 +105,7 @@
             // 
             // LoginPassword
             // 
+            this.LoginPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoginPassword.BorderRadius = 10;
             this.LoginPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LoginPassword.DefaultText = "";
@@ -121,9 +123,11 @@
             this.LoginPassword.SelectedText = "";
             this.LoginPassword.Size = new System.Drawing.Size(294, 36);
             this.LoginPassword.TabIndex = 15;
+            this.LoginPassword.UseSystemPasswordChar = true;
             // 
             // Email
             // 
+            this.Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Email.BorderRadius = 10;
             this.Email.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Email.DefaultText = "";
@@ -150,6 +154,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -166,6 +171,7 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox1.BorderRadius = 10;
             this.guna2PictureBox1.Image = global::MovieBookingSystem.Properties.Resources.spidermanposter;
             this.guna2PictureBox1.ImageRotate = 0F;
@@ -178,6 +184,7 @@
             // 
             // Title
             // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("Poppins SemiBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,6 +198,7 @@
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -204,7 +212,7 @@
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(746, 504);

@@ -15,9 +15,6 @@ namespace MovieBookingSystem
         {
             guna2Panel1.Location = new Point(this.Width, 40); 
             guna2Panel1.Visible = true;
-            this.Hide();
-            Form2 form2 = new Form2();
-            form2.Show();
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)

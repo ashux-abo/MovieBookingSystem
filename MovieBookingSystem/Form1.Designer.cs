@@ -123,10 +123,10 @@
             this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox1);
             this.guna2ShadowPanel1.Controls.Add(this.guna2Button1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(800, 43);
             this.guna2ShadowPanel1.TabIndex = 3;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
@@ -203,7 +203,7 @@
             this.movieCard1.MovieImage = null;
             this.movieCard1.MovieTitle = null;
             this.movieCard1.Name = "movieCard1";
-            this.movieCard1.Size = new System.Drawing.Size(627, 212);
+            this.movieCard1.Size = new System.Drawing.Size(727, 212);
             this.movieCard1.TabIndex = 6;
             // 
             // movieCard2
@@ -260,6 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.flowLayoutPanel2);

@@ -74,7 +74,7 @@ namespace MovieBookingSystem
             if ((int)sqlCommand.ExecuteScalar() > 0)
             {
                 MessageBox.Show("Login Successfully!");
-                Form1 mainPage = new Form1();
+                MainPage mainPage = new MainPage();
                 mainPage.Show();
                 this.Hide(); // Hide the current form
             }
