@@ -1,6 +1,6 @@
 ## Movie Booking Sytem
 
-This is MovieBooking System created for our client (Group 6)
+This is a MovieBooking System created for our client (Group 6)
 This project is a movie booking system designed for users to browse available movies, book tickets, and manage their bookings through a user-friendly interface. 
 
 ## Features
