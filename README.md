@@ -14,11 +14,11 @@ This project is a movie booking system designed for users to browse available mo
 2. Browse movies and select the ones you want to book tickets for.
 
 ## Functional Requirements
-[] Admin User Access
-[] Seat Selection
-[] Online Payment Method
-[] Now Showing Movie
-[] Booking and Payment Confirmation
-[] Theater Location
-[] Customer Support
-[] Reviews and Recommendations
+- [ ] Admin User Access
+- [ ] Seat Selection
+- [ ] Online Payment Method
+- [ ] Now Showing Movie
+- [ ] Booking and Payment Confirmation
+- [ ] Theater Location
+- [ ] Customer Support
+- [ ] Reviews and Recommendations
