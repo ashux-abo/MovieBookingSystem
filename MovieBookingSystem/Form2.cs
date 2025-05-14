@@ -146,5 +146,10 @@ namespace MovieBookingSystem
         {
             dataValidation(sender, e);
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

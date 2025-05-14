@@ -15,16 +15,32 @@ namespace MovieBookingSystem
         private List<Movie> movies = new List<Movie>();
         private bool isSideBarExpanded = false;
         private const int SidebarWidth = 200;
+        private void FlowLayoutPanel(Control flowlayoutpanel)
+        {
+            int formWidth = this.ClientSize.Width;
+            int formHeight = this.ClientSize.Height;
+            int panelWidth = flowlayoutpanel.Width;
+            int panelHeight = flowlayoutpanel.Height;
 
+            flowlayoutpanel.Location = new Point(
+                (formWidth - panelWidth) / 2,
+                (formHeight - panelHeight) / 2
+            );
+        }
         public MainPage()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             InitializeMovies();
             SetupMovieCards();
             SetupSearchBar();
-            SetupNavigation();
+            FlowLayoutPanel(flowLayoutPanel1);
         }
-
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            FlowLayoutPanel(flowLayoutPanel1); // Keeps it centered dynamically
+        }
         private void InitializeMovies()
         {
             // Add sample movies - you can replace these with your actual movie data
@@ -44,6 +60,50 @@ namespace MovieBookingSystem
                 Description = "A live-action adaptation of the popular video game Minecraft.",
                 Rating = "PG-13",
                 Duration = "1h 45m"
+            });
+            movies.Add(new Movie
+            {
+                Title = "Inception",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                Description = "A thief who enters people's dreams to steal secrets must complete an impossible mission.",
+                Rating = "PG-13",
+                Duration = "2h 28m"
+            });
+
+            movies.Add(new Movie
+            {
+                Title = "Interstellar",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                Description = "A team of explorers travel through a wormhole in search of a new home for humanity.",
+                Rating = "PG-13",
+                Duration = "2h 49m"
+            });
+
+            movies.Add(new Movie
+            {
+                Title = "John Wick: Chapter 4",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                Description = "John Wick faces his toughest challenge yet as he fights for survival against a powerful new enemy.",
+                Rating = "R",
+                Duration = "2h 49m"
+            });
+
+            movies.Add(new Movie
+            {
+                Title = "Avatar: The Way of Water",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                Description = "Jake Sully and Neytiri must protect their family from new threats in the oceans of Pandora.",
+                Rating = "PG-13",
+                Duration = "3h 12m"
+            });
+
+            movies.Add(new Movie
+            {
+                Title = "The Super Mario Bros. Movie",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                Description = "Mario and Luigi embark on an adventure to save the Mushroom Kingdom.",
+                Rating = "PG",
+                Duration = "1h 32m"
             });
         }
 
@@ -148,10 +208,10 @@ namespace MovieBookingSystem
 
         private void SetupSearchBar()
         {
-            guna2TextBox1.PlaceholderText = "Search movies...";
-            guna2TextBox1.TextChanged += (s, e) =>
+            searchBox.PlaceholderText = "Search movies...";
+            searchBox.TextChanged += (s, e) =>
             {
-                string searchText = guna2TextBox1.Text.ToLower();
+                string searchText = searchBox.Text.ToLower();
                 foreach (Control control in flowLayoutPanel1.Controls)
                 {
                     if (control is Guna.UI2.WinForms.Guna2Panel card)
@@ -166,22 +226,6 @@ namespace MovieBookingSystem
             };
         }
 
-        private void SetupNavigation()
-        {
-            guna2Button2.Click += (s, e) => { /* Already on dashboard */ };
-            guna2Button3.Click += (s, e) => 
-            {
-                // Open seat selection form
-                Form1 seatSelection = new Form1();
-                seatSelection.Show();
-                this.Hide();
-            };
-            guna2Button4.Click += (s, e) => 
-            {
-                // Open customer support form
-                MessageBox.Show("Customer support feature coming soon!");
-            };
-        }
 
         private void MainPage_Load(object sender, EventArgs e)
         {
@@ -195,27 +239,14 @@ namespace MovieBookingSystem
             timeSideBar.Start();
         }
 
-        private void timeSideBar_Tick(object sender, EventArgs e)
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            int step = 20;
-            if (isSideBarExpanded)
-            {
-                panel2.Location = new Point(panel2.Location.X - step, panel2.Location.Y);
-                if (panel2.Location.X <= -SidebarWidth)
-                {
-                    timeSideBar.Stop();
-                    isSideBarExpanded = false;
-                }
-            }
-            else
-            {
-                panel2.Location = new Point(panel2.Location.X + step, panel2.Location.Y);
-                if (panel2.Location.X >= 0)
-                {
-                    timeSideBar.Stop();
-                    isSideBarExpanded = true;
-                }
-            }
+
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 
