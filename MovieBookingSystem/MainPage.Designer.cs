@@ -1,4 +1,6 @@
-﻿namespace MovieBookingSystem
+﻿using System;
+
+namespace MovieBookingSystem
 {
     partial class MainPage
     {
@@ -222,6 +224,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 

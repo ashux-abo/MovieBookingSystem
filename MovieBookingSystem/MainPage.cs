@@ -47,7 +47,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Spider-Man: Across the Spider-Verse",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "Miles Morales returns for the next chapter of the Oscar-winning Spider-Verse saga.",
                 Rating = "PG",
                 Duration = "2h 20m"
@@ -64,7 +64,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Inception",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "A thief who enters people's dreams to steal secrets must complete an impossible mission.",
                 Rating = "PG-13",
                 Duration = "2h 28m"
@@ -73,7 +73,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Interstellar",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "A team of explorers travel through a wormhole in search of a new home for humanity.",
                 Rating = "PG-13",
                 Duration = "2h 49m"
@@ -82,7 +82,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "John Wick: Chapter 4",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "John Wick faces his toughest challenge yet as he fights for survival against a powerful new enemy.",
                 Rating = "R",
                 Duration = "2h 49m"
@@ -91,7 +91,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Avatar: The Way of Water",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "Jake Sully and Neytiri must protect their family from new threats in the oceans of Pandora.",
                 Rating = "PG-13",
                 Duration = "3h 12m"
@@ -100,7 +100,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "The Super Mario Bros. Movie",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "Mario and Luigi embark on an adventure to save the Mushroom Kingdom.",
                 Rating = "PG",
                 Duration = "1h 32m"
@@ -247,6 +247,15 @@ namespace MovieBookingSystem
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 
