@@ -19,7 +19,7 @@ namespace PaymentMethod
 
         private void guna2HtmlLabel5_Click(object sender, EventArgs e)
         {
-
+            //testing
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
