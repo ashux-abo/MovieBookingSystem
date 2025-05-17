@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace PaymentMethod
 {
-    public partial class PaymentMethodScreenBilling : Form
+    public partial class SummaryControl : UserControl
     {
-        public PaymentMethodScreenBilling()
+        public SummaryControl()
         {
             InitializeComponent();
         }
 
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PaymentMethodScreenBilling_Load(object sender, EventArgs e)
+        private void SummaryControl_Load(object sender, EventArgs e)
         {
 
         }
@@ -34,25 +29,16 @@ namespace PaymentMethod
             panel1.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
+        private void guna2Button2_Click_1(object sender, EventArgs e)
         {
             PaymentControl paymentControl = new PaymentControl();
             addUserControl(paymentControl);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Booking Confirmed");
         }
     }
 }

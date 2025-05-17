@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PaymentMethod;
 namespace MovieBookingSystem
 {
     public partial class MovieDetailsPage : Form
@@ -15,6 +16,7 @@ namespace MovieBookingSystem
         public MovieDetailsPage()
         {
             InitializeComponent();
+          
         }
 
         private void subDescription_Click(object sender, EventArgs e)
@@ -24,15 +26,34 @@ namespace MovieBookingSystem
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ArrayList items = new ArrayList();
+            items.Add("SM North");
+            items.Add("SM Ortigas");
+            items.Add("SM Megmall");
+            foreach (var item in items)
+            {
+                guna2ComboBox1.Items.Add(item);
+            }
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            guna2ComboBox1_SelectedIndexChanged(sender, e);
         }
 
         private void btnBook_Click(object sender, EventArgs e)
+        {
+            PaymentMethodScreenBilling paymentMethodScreen = new PaymentMethodScreenBilling();
+            paymentMethodScreen.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            SeatSelection seatSelection = new SeatSelection();
+            seatSelection.Show();
+        }
+
+        private void movieTitle_Click(object sender, EventArgs e)
         {
 
         }

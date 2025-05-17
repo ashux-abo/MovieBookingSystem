@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="descriptionLabel.Text" xml:space="preserve">
+    <value>The Minecraft Movie is a 2025 fantasy adventure comedy film inspired by the popular video 
+game Minecraft. Directed by Jared Hess, the movie follows four misfits—Garrett, Henry, 
+Natalie, and Dawn—who are transported into the cubic world of Minecraft through a 
+mysterious portal. In this imaginative Overworld, they must navigate treacherous 
+landscapes, hostile mobs, and challenges to find their way back home. Along the way, 
+they are guided by Steve, an expert crafter played by Jack Black.
+
+</value>
+  </data>
 </root>

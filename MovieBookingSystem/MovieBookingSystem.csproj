@@ -99,17 +99,23 @@
     <Compile Include="NowShowing.Designer.cs">
       <DependentUpon>NowShowing.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentMethodScreen.cs">
+    <Compile Include="UserControl\PaymentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PaymentMethodScreen.Designer.cs">
-      <DependentUpon>PaymentMethodScreen.cs</DependentUpon>
+    <Compile Include="UserControl\PaymentControl.Designer.cs">
+      <DependentUpon>PaymentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentMethodScreenBilling.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PaymentMethodScreenBilling.Designer.cs">
       <DependentUpon>PaymentMethodScreenBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentProcess.Designer.cs">
+      <DependentUpon>PaymentProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="SeatSelection.Designer.cs">
       <DependentUpon>SeatSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SummaryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\SummaryControl.Designer.cs">
+      <DependentUpon>SummaryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -148,8 +160,8 @@
     <EmbeddedResource Include="NowShowing.resx">
       <DependentUpon>NowShowing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentMethodScreen.resx">
-      <DependentUpon>PaymentMethodScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\PaymentControl.resx">
+      <DependentUpon>PaymentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentMethodScreenBilling.resx">
       <DependentUpon>PaymentMethodScreenBilling.cs</DependentUpon>
@@ -161,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeatSelection.resx">
       <DependentUpon>SeatSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\SummaryControl.resx">
+      <DependentUpon>SummaryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>

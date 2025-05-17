@@ -140,6 +140,7 @@
             this.RegisterPassword.SelectedText = "";
             this.RegisterPassword.Size = new System.Drawing.Size(294, 36);
             this.RegisterPassword.TabIndex = 3;
+            this.RegisterPassword.Visible = false;
             // 
             // guna2CheckBox1
             // 
