@@ -53,3 +53,29 @@ namespace PaymentMethod
         }
     }
 }
+public class transferData
+{
+    public string OwnerName 
+    { get; 
+      set; 
+    }
+
+    public string SummaryAddress
+    {
+        get;
+        set;
+    }
+
+    public string SummaryPhone
+    {
+        get;
+        set;
+    }
+
+    public string SummaryEmail
+    {
+        get;
+        set;
+    }
+
+}

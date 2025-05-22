@@ -233,7 +233,7 @@ namespace PaymentMethod
             this.OwnerName.BackColor = System.Drawing.Color.Transparent;
             this.OwnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OwnerName.ForeColor = System.Drawing.Color.White;
-            this.OwnerName.Location = new System.Drawing.Point(25, 35);
+            this.OwnerName.Location = new System.Drawing.Point(25, 32);
             this.OwnerName.Name = "OwnerName";
             this.OwnerName.Size = new System.Drawing.Size(91, 15);
             this.OwnerName.TabIndex = 0;

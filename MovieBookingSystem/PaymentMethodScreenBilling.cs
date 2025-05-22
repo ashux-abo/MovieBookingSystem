@@ -44,6 +44,11 @@ namespace PaymentMethod
         {
             PaymentControl paymentControl = new PaymentControl();
             addUserControl(paymentControl);
+
+            transferData summaryControl = new transferData();
+            
+
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -101,3 +106,19 @@ namespace PaymentMethod
     }
 }
 
+public class UserInfo
+{
+
+    private string FullName;
+    private string Email;
+    private int Phone;
+    private string City;
+    private string Address;
+    private int Zip;
+    private string Country;
+
+    public UserInfo()
+    {
+
+    }
+}
