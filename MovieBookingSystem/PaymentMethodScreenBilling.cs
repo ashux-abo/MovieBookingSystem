@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MovieBookingSystem.Model;
 namespace PaymentMethod
 {
     public partial class PaymentMethodScreenBilling : Form
@@ -39,16 +40,42 @@ namespace PaymentMethod
         {
             
         }
-
+        private UserInfo savedUserInfo;
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            PaymentControl paymentControl = new PaymentControl();
-            addUserControl(paymentControl);
+            if (SaveTheUserInfo())
+            {
+                PaymentControl paymentControl = new PaymentControl();
+                addUserControl(paymentControl);
+            }
 
-            transferData summaryControl = new transferData();
-            
+        }
 
-            
+        private bool SaveTheUserInfo()
+        {
+            string fullName = $"{Fname.Text} {Lname.Text}";
+
+            if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(Eaddress.Text) ||
+                string.IsNullOrWhiteSpace(Phone.Text) || string.IsNullOrWhiteSpace(City.Text) ||
+                string.IsNullOrWhiteSpace(Address.Text) || string.IsNullOrWhiteSpace(ZipCode.Text) ||
+                string.IsNullOrWhiteSpace(State.Text))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return false;
+            }
+
+            if (!int.TryParse(Phone.Text, out int phone) || !int.TryParse(ZipCode.Text, out int zip))
+            {
+                MessageBox.Show("Phone and Zip Code must be numeric.");
+                return false;
+            }
+
+            // Store the user info in static property
+            UserInfo.CurrentUser = new UserInfo(fullName, Eaddress.Text, phone, City.Text, Address.Text, zip, State.Text);
+
+            //DEBUG: Verify the data was saved
+            MessageBox.Show($"User information saved successfully!\nName: {UserInfo.CurrentUser.FullName}\nEmail: {UserInfo.CurrentUser.Email}");
+            return true;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -103,22 +130,12 @@ namespace PaymentMethod
                 State.Items.Add(item);
             }
         }
+
+        private void Lname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
-public class UserInfo
-{
 
-    private string FullName;
-    private string Email;
-    private int Phone;
-    private string City;
-    private string Address;
-    private int Zip;
-    private string Country;
-
-    public UserInfo()
-    {
-
-    }
-}

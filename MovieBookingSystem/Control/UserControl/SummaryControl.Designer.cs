@@ -150,6 +150,7 @@ namespace PaymentMethod
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(670, 146);
             this.guna2Panel4.TabIndex = 97;
+            this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
             // SummaryPhone
             // 

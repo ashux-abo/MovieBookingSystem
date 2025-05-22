@@ -431,6 +431,7 @@ namespace PaymentMethod
             this.Lname.SelectedText = "";
             this.Lname.Size = new System.Drawing.Size(321, 31);
             this.Lname.TabIndex = 46;
+            this.Lname.TextChanged += new System.EventHandler(this.Lname_TextChanged);
             // 
             // Fname
             // 

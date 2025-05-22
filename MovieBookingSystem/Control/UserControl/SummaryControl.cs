@@ -8,11 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PaymentMethod;
-
+using MovieBookingSystem.Model;
+using System.Net.Mail;
 namespace PaymentMethod
 {
     public partial class SummaryControl : UserControl
     {
+
+        private UserInfo userInfo;
+        // Constructor that accepts UserInfo
+        public SummaryControl(UserInfo userInfo)
+        {
+            InitializeComponent();
+            this.userInfo = userInfo;
+        }
+
         public SummaryControl()
         {
             InitializeComponent();
@@ -20,7 +30,7 @@ namespace PaymentMethod
 
         private void SummaryControl_Load(object sender, EventArgs e)
         {
-
+            ShowSummaryDetails();
         }
 
         private void addUserControl(UserControl userControl)
@@ -49,33 +59,36 @@ namespace PaymentMethod
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
-    }
-}
-public class transferData
-{
-    public string OwnerName 
-    { get; 
-      set; 
-    }
 
-    public string SummaryAddress
-    {
-        get;
-        set;
-    }
 
-    public string SummaryPhone
-    {
-        get;
-        set;
-    }
+        private void ShowSummaryDetails()
+        {
+            // First try to use the userInfo passed via constructor
+            UserInfo infoToShow = userInfo ?? UserInfo.CurrentUser;
 
-    public string SummaryEmail
-    {
-        get;
-        set;
-    }
+            if (infoToShow != null)
+            {
+                OwnerName.Text = infoToShow.FullName ?? "";
+                SummaryAddress.Text = infoToShow.Address ?? "";
+                SummaryPhone.Text = infoToShow.Phone.ToString();
+                SummaryEmail.Text = infoToShow.Email ?? "";
+            }
+            else
+            {
+                // Handle case when no user info is available
+                OwnerName.Text = "No name provided";
+                SummaryAddress.Text = "No address provided";
+                SummaryPhone.Text = "No phone provided";
+                SummaryEmail.Text = "No email provided";
+            }
+        }
 
+        private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+    }
 }

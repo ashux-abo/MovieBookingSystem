@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MovieBookingSystem.Model; 
 
 namespace PaymentMethod
 {
@@ -24,12 +25,10 @@ namespace PaymentMethod
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void guna2HtmlLabel6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void addUserControl(UserControl userControl)
@@ -42,7 +41,6 @@ namespace PaymentMethod
 
         private void PaymentControl_Load(object sender, EventArgs e)
         {
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -53,13 +51,27 @@ namespace PaymentMethod
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            SummaryControl summaryControl = new SummaryControl();
-            addUserControl(summaryControl);
+            if (UserInfo.CurrentUser != null)
+            {
+                MessageBox.Show($"User info found!\nName: {UserInfo.CurrentUser.FullName}\nEmail: {UserInfo.CurrentUser.Email}");
+                SummaryControl summaryControl = new SummaryControl(UserInfo.CurrentUser);
+                addUserControl(summaryControl);
+            }
+            else
+            {
+                MessageBox.Show("No user information found. Please fill in your details first.");
+
+           
+                Form parentForm = this.FindForm();
+                if (parentForm != null)
+                {
+                    parentForm.Close(); 
+                }
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }
