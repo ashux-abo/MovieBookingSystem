@@ -248,6 +248,7 @@
             this.movieDescription.Size = new System.Drawing.Size(557, 69);
             this.movieDescription.TabIndex = 8;
             this.movieDescription.Text = resources.GetString("movieDescription.Text");
+            this.movieDescription.Click += new System.EventHandler(this.movieDescription_Click);
             // 
             // movieTitle
             // 

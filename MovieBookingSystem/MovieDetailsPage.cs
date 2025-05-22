@@ -26,7 +26,7 @@ namespace MovieBookingSystem
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ArrayList items = new ArrayList();
+            List<string> items = new List<string>();
             items.Add("SM North");
             items.Add("SM Ortigas");
             items.Add("SM Megmall");
@@ -54,6 +54,11 @@ namespace MovieBookingSystem
         }
 
         private void movieTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void movieDescription_Click(object sender, EventArgs e)
         {
 
         }

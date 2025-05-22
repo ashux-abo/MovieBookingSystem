@@ -45,7 +45,6 @@ namespace PaymentMethod
             this.ZipCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,7 +53,6 @@ namespace PaymentMethod
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.State = new Guna.UI2.WinForms.Guna2ComboBox();
             this.City = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Country = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Address = new Guna.UI2.WinForms.Guna2TextBox();
             this.Phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.Eaddress = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,7 +76,6 @@ namespace PaymentMethod
             this.panel1.Controls.Add(this.ZipCode);
             this.panel1.Controls.Add(this.guna2HtmlLabel13);
             this.panel1.Controls.Add(this.guna2HtmlLabel12);
-            this.panel1.Controls.Add(this.guna2HtmlLabel11);
             this.panel1.Controls.Add(this.guna2HtmlLabel10);
             this.panel1.Controls.Add(this.guna2HtmlLabel9);
             this.panel1.Controls.Add(this.guna2HtmlLabel8);
@@ -87,7 +84,6 @@ namespace PaymentMethod
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.State);
             this.panel1.Controls.Add(this.City);
-            this.panel1.Controls.Add(this.Country);
             this.panel1.Controls.Add(this.Address);
             this.panel1.Controls.Add(this.Phone);
             this.panel1.Controls.Add(this.Eaddress);
@@ -95,6 +91,7 @@ namespace PaymentMethod
             this.panel1.Controls.Add(this.Fname);
             this.panel1.Controls.Add(this.guna2HtmlLabel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 463);
@@ -227,6 +224,7 @@ namespace PaymentMethod
             this.ZipCode.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.ZipCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ZipCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ZipCode.ForeColor = System.Drawing.Color.White;
             this.ZipCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ZipCode.Location = new System.Drawing.Point(222, 340);
             this.ZipCode.Name = "ZipCode";
@@ -249,21 +247,11 @@ namespace PaymentMethod
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(571, 263);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(401, 263);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(52, 15);
             this.guna2HtmlLabel12.TabIndex = 60;
             this.guna2HtmlLabel12.Text = "City/Town";
-            // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(401, 262);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(39, 15);
-            this.guna2HtmlLabel11.TabIndex = 59;
-            this.guna2HtmlLabel11.Text = "Country";
             // 
             // guna2HtmlLabel10
             // 
@@ -339,12 +327,13 @@ namespace PaymentMethod
             this.State.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.State.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.State.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.State.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.State.ForeColor = System.Drawing.Color.White;
             this.State.ItemHeight = 30;
             this.State.Location = new System.Drawing.Point(52, 340);
             this.State.Name = "State";
             this.State.Size = new System.Drawing.Size(154, 36);
             this.State.TabIndex = 52;
+            this.State.SelectedIndexChanged += new System.EventHandler(this.State_SelectedIndexChanged);
             // 
             // City
             // 
@@ -355,30 +344,13 @@ namespace PaymentMethod
             this.City.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.City.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.City.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.City.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.City.ForeColor = System.Drawing.Color.White;
             this.City.ItemHeight = 30;
-            this.City.Location = new System.Drawing.Point(571, 283);
+            this.City.Location = new System.Drawing.Point(401, 283);
             this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(152, 36);
+            this.City.Size = new System.Drawing.Size(320, 36);
             this.City.TabIndex = 51;
-            // 
-            // Country
-            // 
-            this.Country.BackColor = System.Drawing.Color.Transparent;
-            this.Country.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Country.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.Country.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Country.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Country.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Country.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Country.ItemHeight = 30;
-            this.Country.Items.AddRange(new object[] {
-            "Philippines"});
-            this.Country.Location = new System.Drawing.Point(401, 283);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(154, 36);
-            this.Country.TabIndex = 50;
+            this.City.SelectedIndexChanged += new System.EventHandler(this.City_SelectedIndexChanged);
             // 
             // Address
             // 
@@ -391,6 +363,7 @@ namespace PaymentMethod
             this.Address.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Address.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Address.ForeColor = System.Drawing.Color.White;
             this.Address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Address.Location = new System.Drawing.Point(52, 283);
             this.Address.Name = "Address";
@@ -410,6 +383,7 @@ namespace PaymentMethod
             this.Phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Phone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Phone.ForeColor = System.Drawing.Color.White;
             this.Phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Phone.Location = new System.Drawing.Point(401, 224);
             this.Phone.Name = "Phone";
@@ -429,6 +403,7 @@ namespace PaymentMethod
             this.Eaddress.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Eaddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Eaddress.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Eaddress.ForeColor = System.Drawing.Color.White;
             this.Eaddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Eaddress.Location = new System.Drawing.Point(52, 224);
             this.Eaddress.Name = "Eaddress";
@@ -448,6 +423,7 @@ namespace PaymentMethod
             this.Lname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Lname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Lname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Lname.ForeColor = System.Drawing.Color.White;
             this.Lname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Lname.Location = new System.Drawing.Point(401, 163);
             this.Lname.Name = "Lname";
@@ -467,6 +443,7 @@ namespace PaymentMethod
             this.Fname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Fname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Fname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Fname.ForeColor = System.Drawing.Color.White;
             this.Fname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Fname.Location = new System.Drawing.Point(52, 163);
             this.Fname.Name = "Fname";
@@ -518,7 +495,6 @@ namespace PaymentMethod
         private Guna.UI2.WinForms.Guna2TextBox ZipCode;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
@@ -527,7 +503,6 @@ namespace PaymentMethod
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2ComboBox State;
         private Guna.UI2.WinForms.Guna2ComboBox City;
-        private Guna.UI2.WinForms.Guna2ComboBox Country;
         private Guna.UI2.WinForms.Guna2TextBox Address;
         private Guna.UI2.WinForms.Guna2TextBox Phone;
         private Guna.UI2.WinForms.Guna2TextBox Eaddress;
