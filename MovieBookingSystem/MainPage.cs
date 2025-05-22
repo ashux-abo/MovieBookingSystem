@@ -320,6 +320,11 @@ namespace MovieBookingSystem
             SeatSelection seatSelection = new SeatSelection();
             seatSelection.Show();
         }
+
+        private void guna2Panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public class Movie

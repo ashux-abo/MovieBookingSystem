@@ -56,5 +56,10 @@ namespace PaymentMethod
             SummaryControl summaryControl = new SummaryControl();
             addUserControl(summaryControl);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

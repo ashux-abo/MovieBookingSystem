@@ -110,7 +110,7 @@ namespace MovieBookingSystem
             sqlConnection.Open();
             if (sqlConnection.State == System.Data.ConnectionState.Open)
             {
-                string checkQuery = "SELECT COUNT(*) FROM RegisterUser WHERE REmail = @Email";
+                string checkQuery = "SELECT COUNT(*) FROM RegisterUser WHERE REmail = @Email"; //check the query
                 SqlCommand checkCommand = new SqlCommand(checkQuery, sqlConnection);
                 checkCommand.Parameters.AddWithValue("@Email", email);
                 if ((int)checkCommand.ExecuteScalar() > 0)
