@@ -63,12 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,10 +93,10 @@
     <Compile Include="NowShowing.Designer.cs">
       <DependentUpon>NowShowing.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\PaymentControl.cs">
+    <Compile Include="Control\UserControl\PaymentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\PaymentControl.Designer.cs">
+    <Compile Include="Control\UserControl\PaymentControl.Designer.cs">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentMethodScreenBilling.cs">
@@ -130,21 +124,12 @@
     <Compile Include="SeatSelection.Designer.cs">
       <DependentUpon>SeatSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\SummaryControl.cs">
+    <Compile Include="Control\UserControl\SummaryControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\SummaryControl.Designer.cs">
+    <Compile Include="Control\UserControl\SummaryControl.Designer.cs">
       <DependentUpon>SummaryControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,7 +145,7 @@
     <EmbeddedResource Include="NowShowing.resx">
       <DependentUpon>NowShowing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\PaymentControl.resx">
+    <EmbeddedResource Include="Control\UserControl\PaymentControl.resx">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentMethodScreenBilling.resx">
@@ -174,11 +159,8 @@
     <EmbeddedResource Include="SeatSelection.resx">
       <DependentUpon>SeatSelection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\SummaryControl.resx">
+    <EmbeddedResource Include="Control\UserControl\SummaryControl.resx">
       <DependentUpon>SummaryControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

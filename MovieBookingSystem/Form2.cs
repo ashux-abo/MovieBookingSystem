@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace MovieBookingSystem
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form //this is a register page
     {
         private Timer timer;
         private int currentImageIndex = 0;
