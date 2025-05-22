@@ -25,7 +25,8 @@ namespace PaymentMethod
 
         private void PaymentMethodScreenBilling_Load(object sender, EventArgs e)
         {
-
+            PopulateCityComboBox();
+            PopulateStateComboBox();
         }
 
         private void addUserControl(UserControl userControl)
@@ -48,8 +49,7 @@ namespace PaymentMethod
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            State_SelectedIndexChanged(sender, e);
-            City_SelectedIndexChanged(sender, e);
+            
         }
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -58,6 +58,30 @@ namespace PaymentMethod
         }
 
         private void State_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void City_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void PopulateCityComboBox()
+        {
+            City.DropDownStyle = ComboBoxStyle.DropDown;
+            List<string> city = new List<string>
+            {
+                "Manila", "Quezon City","CALABARZON", "Cebu City", "Davao City", "Zamboanga City", "Taguig City",
+                "Pasig City", "Makati City", "Caloocan City", "Antipolo City", "Iloilo City", "Baguio City",
+                "General Santos City", "San Juan City", "Mandaluyong City"
+            };
+            foreach (var item in city)
+            {
+                City.Items.Add(item);
+            }
+        }
+        private void PopulateStateComboBox()
         {
             State.DropDownStyle = ComboBoxStyle.DropDown;
             List<string> state = new List<string>
@@ -73,23 +97,6 @@ namespace PaymentMethod
             foreach (var item in state)
             {
                 State.Items.Add(item);
-            }
-
-        }
-
-
-        private void City_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            City.DropDownStyle = ComboBoxStyle.DropDown;    
-            List<string> city = new List<string>
-            {
-                "Manila", "Quezon City","CALABARZON", "Cebu City", "Davao City", "Zamboanga City", "Taguig City",
-                "Pasig City", "Makati City", "Caloocan City", "Antipolo City", "Iloilo City", "Baguio City",
-                "General Santos City", "San Juan City", "Mandaluyong City"
-            };
-            foreach(var item in city)
-            {
-                City.Items.Add(item);
             }
         }
     }

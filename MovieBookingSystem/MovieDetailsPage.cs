@@ -26,6 +26,10 @@ namespace MovieBookingSystem
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+        }
+        private void PopulateTheaterLocation()
+        {
             List<string> items = new List<string>();
             items.Add("SM North");
             items.Add("SM Ortigas");
@@ -38,7 +42,7 @@ namespace MovieBookingSystem
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            guna2ComboBox1_SelectedIndexChanged(sender, e);
+            PopulateTheaterLocation();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
