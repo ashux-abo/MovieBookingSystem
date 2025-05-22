@@ -30,10 +30,12 @@ namespace MovieBookingSystem
         }
         private void PopulateTheaterLocation()
         {
-            List<string> items = new List<string>();
-            items.Add("SM North");
-            items.Add("SM Ortigas");
-            items.Add("SM Megmall");
+            List<string> items = new List<string>
+            {
+             "SM City North EDSA", "SM Mall of Asia", "SM Megamall", "SM City Manila", "SM City Fairview", "SM City San Lazaro",
+            "SM City Marikina", "SM City San Mateo", "SM City Sucat", "SM City Bicutan", "SM City Taytay", "SM City Sta. Mesa",
+            "SM City Novaliches", "SM City San Fernando", "SM City Clark", "SM City Pampanga", "SM City Batangas"
+            };
             foreach (var item in items)
             {
                 guna2ComboBox1.Items.Add(item);
@@ -42,7 +44,7 @@ namespace MovieBookingSystem
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            PopulateTheaterLocation();
+           
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -65,6 +67,11 @@ namespace MovieBookingSystem
         private void movieDescription_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MovieDetailsPage_Load(object sender, EventArgs e)
+        {
+            PopulateTheaterLocation();
         }
     }
 }

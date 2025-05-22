@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PaymentMethod;
 
 namespace PaymentMethod
 {
@@ -42,6 +43,11 @@ namespace PaymentMethod
         }
 
         private void label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

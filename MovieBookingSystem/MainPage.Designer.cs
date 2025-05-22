@@ -37,7 +37,6 @@ namespace MovieBookingSystem
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.timeSideBar = new System.Windows.Forms.Timer(this.components);
             this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -87,7 +86,6 @@ namespace MovieBookingSystem
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panel2.Controls.Add(this.guna2Button2);
-            this.panel2.Controls.Add(this.guna2Button3);
             this.panel2.Controls.Add(this.guna2Button4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 30);
@@ -109,22 +107,6 @@ namespace MovieBookingSystem
             this.guna2Button2.Size = new System.Drawing.Size(145, 45);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Dashboard";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(578, 6);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(145, 45);
-            this.guna2Button3.TabIndex = 8;
-            this.guna2Button3.Text = "Seat Selection";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button4
             // 
@@ -231,7 +213,6 @@ namespace MovieBookingSystem
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Timer timeSideBar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;

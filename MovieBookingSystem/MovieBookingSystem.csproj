@@ -90,12 +90,6 @@
     <Compile Include="MovieDetailsPage.Designer.cs">
       <DependentUpon>MovieDetailsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="NowShowing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NowShowing.Designer.cs">
-      <DependentUpon>NowShowing.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\UserControl\PaymentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,9 +138,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieDetailsPage.resx">
       <DependentUpon>MovieDetailsPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NowShowing.resx">
-      <DependentUpon>NowShowing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserControl\PaymentControl.resx">
       <DependentUpon>PaymentControl.cs</DependentUpon>
