@@ -31,22 +31,22 @@ namespace PaymentMethod
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SummaryPhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SummaryAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.SummaryEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.OwnerName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.SummaryEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -77,6 +77,19 @@ namespace PaymentMethod
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 463);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label
+            // 
+            this.label.BackColor = System.Drawing.Color.Transparent;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.White;
+            this.label.Location = new System.Drawing.Point(54, 115);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(120, 18);
+            this.label.TabIndex = 92;
+            this.label.Text = "Summary Details";
+            this.label.Click += new System.EventHandler(this.label_Click);
             // 
             // guna2Panel5
             // 
@@ -138,18 +151,6 @@ namespace PaymentMethod
             this.guna2Panel4.Size = new System.Drawing.Size(670, 146);
             this.guna2Panel4.TabIndex = 97;
             // 
-            // label
-            // 
-            this.label.BackColor = System.Drawing.Color.Transparent;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(54, 115);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(120, 18);
-            this.label.TabIndex = 92;
-            this.label.Text = "Summary Details";
-            this.label.Click += new System.EventHandler(this.label_Click);
-            // 
             // SummaryPhone
             // 
             this.SummaryPhone.BackColor = System.Drawing.Color.Transparent;
@@ -182,6 +183,17 @@ namespace PaymentMethod
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(41, 15);
             this.guna2HtmlLabel10.TabIndex = 89;
             this.guna2HtmlLabel10.Text = "Email :";
+            // 
+            // SummaryEmail
+            // 
+            this.SummaryEmail.BackColor = System.Drawing.Color.Transparent;
+            this.SummaryEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SummaryEmail.ForeColor = System.Drawing.Color.White;
+            this.SummaryEmail.Location = new System.Drawing.Point(72, 113);
+            this.SummaryEmail.Name = "SummaryEmail";
+            this.SummaryEmail.Size = new System.Drawing.Size(97, 17);
+            this.SummaryEmail.TabIndex = 94;
+            this.SummaryEmail.Text = "Summary Details";
             // 
             // guna2HtmlLabel9
             // 
@@ -221,7 +233,7 @@ namespace PaymentMethod
             this.OwnerName.BackColor = System.Drawing.Color.Transparent;
             this.OwnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OwnerName.ForeColor = System.Drawing.Color.White;
-            this.OwnerName.Location = new System.Drawing.Point(25, 35);
+            this.OwnerName.Location = new System.Drawing.Point(25, 32);
             this.OwnerName.Name = "OwnerName";
             this.OwnerName.Size = new System.Drawing.Size(91, 15);
             this.OwnerName.TabIndex = 0;
@@ -256,17 +268,6 @@ namespace PaymentMethod
             this.guna2Button1.TabIndex = 95;
             this.guna2Button1.Text = "Submit";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // SummaryEmail
-            // 
-            this.SummaryEmail.BackColor = System.Drawing.Color.Transparent;
-            this.SummaryEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SummaryEmail.ForeColor = System.Drawing.Color.White;
-            this.SummaryEmail.Location = new System.Drawing.Point(72, 113);
-            this.SummaryEmail.Name = "SummaryEmail";
-            this.SummaryEmail.Size = new System.Drawing.Size(97, 17);
-            this.SummaryEmail.TabIndex = 94;
-            this.SummaryEmail.Text = "Summary Details";
             // 
             // guna2Panel3
             // 
