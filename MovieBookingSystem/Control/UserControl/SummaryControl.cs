@@ -40,5 +40,10 @@ namespace PaymentMethod
         {
             MessageBox.Show("Booking Confirmed");
         }
+
+        private void label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
