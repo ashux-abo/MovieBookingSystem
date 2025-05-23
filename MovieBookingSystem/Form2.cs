@@ -151,5 +151,10 @@ namespace MovieBookingSystem
         {
             Application.Exit();
         }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

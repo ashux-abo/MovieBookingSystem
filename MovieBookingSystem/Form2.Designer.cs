@@ -133,14 +133,14 @@
             this.RegisterPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.RegisterPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegisterPassword.Location = new System.Drawing.Point(386, 241);
+            this.RegisterPassword.Location = new System.Drawing.Point(386, 243);
             this.RegisterPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RegisterPassword.Name = "RegisterPassword";
             this.RegisterPassword.PlaceholderText = "Password";
             this.RegisterPassword.SelectedText = "";
             this.RegisterPassword.Size = new System.Drawing.Size(294, 36);
             this.RegisterPassword.TabIndex = 3;
-            this.RegisterPassword.Visible = false;
+            this.RegisterPassword.Visible = true;
             // 
             // guna2CheckBox1
             // 
@@ -193,6 +193,7 @@
             this.Title.Size = new System.Drawing.Size(299, 51);
             this.Title.TabIndex = 8;
             this.Title.Text = "Create an Account";
+            this.Title.Click += new System.EventHandler(this.Title_Click);
             // 
             // SideTitle
             // 
