@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeatsCinemaBook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4c54a542622e4ee6211db9f180dc0a14772e180")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be19028673d9f7ec8486ab18b58324bc9f8e24f")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeatsCinemaBook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeatsCinemaBook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
