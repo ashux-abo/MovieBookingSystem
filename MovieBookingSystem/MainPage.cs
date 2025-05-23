@@ -13,7 +13,6 @@ namespace MovieBookingSystem
     public partial class MainPage : Form
     {
         private List<Movie> movies = new List<Movie>();
-        private bool isSideBarExpanded = false;
         private const int SidebarWidth = 200;
 
         private void FlowLayoutPanel(Control flowlayoutpanel)

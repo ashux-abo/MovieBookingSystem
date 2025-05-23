@@ -40,7 +40,7 @@ namespace PaymentMethod
         {
             
         }
-        private UserInfo savedUserInfo;
+
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             if (SaveTheUserInfo())
@@ -64,16 +64,17 @@ namespace PaymentMethod
                 return false;
             }
 
-            if (!int.TryParse(Phone.Text, out int phone) || !int.TryParse(ZipCode.Text, out int zip))
+            if (!long.TryParse(Phone.Text, out long phone) || !int.TryParse(ZipCode.Text, out int zip))
             {
-                MessageBox.Show("Phone and Zip Code must be numeric.");
+                Console.WriteLine("Not a number");
+                MessageBox.Show("Phone must be numeric and Zip Code must be a valid integer.");
                 return false;
             }
 
-            // Store the user info in static property
-            UserInfo.CurrentUser = new UserInfo(fullName, Eaddress.Text, phone, City.Text, Address.Text, zip, State.Text);
+            // Store the user info in static property  
+            UserInfo.CurrentUser = new UserInfo(fullName, Eaddress.Text, (int)phone, City.Text, Address.Text, zip, State.Text);
 
-            //DEBUG: Verify the data was saved
+            //DEBUG: Verify the data was saved  
             MessageBox.Show($"User information saved successfully!\nName: {UserInfo.CurrentUser.FullName}\nEmail: {UserInfo.CurrentUser.Email}");
             return true;
         }

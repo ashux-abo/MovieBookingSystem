@@ -16,8 +16,10 @@ namespace PaymentMethod
     {
 
         private UserInfo userInfo;
+        private UserCardInfo userCardInfo;
         // Constructor that accepts UserInfo
         public SummaryControl(UserInfo userInfo)
+
         {
             InitializeComponent();
             this.userInfo = userInfo;
@@ -83,6 +85,23 @@ namespace PaymentMethod
                 SummaryPhone.Text = "No phone provided";
                 SummaryEmail.Text = "No email provided";
             }
+
+            UserCardInfo cardInfoToShow = userCardInfo ?? UserCardInfo.cardCurrentInfo;
+            /*if (cardInfoToShow != null) {
+                CardName.Text = cardInfoToShow.CardName ?? "";
+                CardNum.Text = cardInfoToShow.CardNumber.ToString();
+                ExpDate.Text = cardInfoToShow.ExpirationDate.ToString();
+                CVV.Text = cardInfoToShow.CVV.ToString();
+            }
+            else
+            {
+                // Handle case when no user card info is available
+                CardName.Text = "No card name provided";
+                CardNum.Text = "No card number provided";
+                ExpDate.Text = "No expiration date provided";
+                CVV.Text = "No CVV provided";
+
+            }*/
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
