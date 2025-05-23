@@ -17,7 +17,6 @@ namespace PaymentMethod
 
         private UserInfo userInfo;
         private UserCardInfo userCardInfo;
-        // Constructor that accepts UserInfo
         public SummaryControl(UserInfo userInfo)
 
         {

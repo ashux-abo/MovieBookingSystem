@@ -183,6 +183,11 @@
     <None Include="Resources\hamburger.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\avatar_the_way_of_water.jpg" />
+    <Content Include="Resources\demon-slayer-mugen-train.jpg" />
+    <Content Include="Resources\interstellarposter.jpeg" />
+    <Content Include="Resources\john_wick_chapter_four_ver2.jpg" />
+    <Content Include="Resources\super_mario_bros_the_movie_ver2.jpg" />
     <None Include="Resources\1393819.jpg" />
     <None Include="Resources\13938191.jpg" />
     <Content Include=".gitattributes" />

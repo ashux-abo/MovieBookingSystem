@@ -80,7 +80,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Interstellar",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\interstellarposter.jpeg",
                 Description = "A team of explorers travel through a wormhole in search of a new home for humanity.",
                 Rating = "PG-13",
                 Duration = "2h 49m",
@@ -90,7 +90,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "John Wick: Chapter 4",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\john_wick_chapter_four_ver2.jpg",
                 Description = "John Wick faces his toughest challenge yet as he fights for survival against a powerful new enemy.",
                 Rating = "R",
                 Duration = "2h 49m",
@@ -100,7 +100,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "Avatar: The Way of Water",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\avatar_the_way_of_water.jpg",
                 Description = "Jake Sully and Neytiri must protect their family from new threats in the oceans of Pandora.",
                 Rating = "PG-13",
                 Duration = "3h 12m",
@@ -110,7 +110,7 @@ namespace MovieBookingSystem
             movies.Add(new Movie
             {
                 Title = "The Super Mario Bros. Movie",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\super_mario_bros_the_movie_ver2.jpg",
                 Description = "Mario and Luigi embark on an adventure to save the Mushroom Kingdom.",
                 Rating = "PG",
                 Duration = "1h 32m",
@@ -146,7 +146,7 @@ namespace MovieBookingSystem
             var pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             pictureBox.Size = new Size(cardWidth, cardHeight - 60);
             pictureBox.Location = new Point(0, 0);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.Image = Image.FromFile(movie.ImagePath);
             pictureBox.BorderRadius = 10;
 
