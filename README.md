@@ -1,6 +1,6 @@
 ## Movie Booking Sytem
 
-This is MovieBooking System created for our client (Group 6)
+This is a MovieBooking System created for our client (Group 6)
 This project is a movie booking system designed for users to browse available movies, book tickets, and manage their bookings through a user-friendly interface. 
 
 ## Features
@@ -12,3 +12,13 @@ This project is a movie booking system designed for users to browse available mo
 ## Usage
 1. Register as a new user or log in with your credentials.
 2. Browse movies and select the ones you want to book tickets for.
+
+## Functional Requirements
+- [ ] Admin User Access
+- [ ] Seat Selection
+- [ ] Online Payment Method
+- [ ] Now Showing Movie
+- [ ] Booking and Payment Confirmation
+- [ ] Theater Location
+- [ ] Customer Support
+- [ ] Reviews and Recommendations

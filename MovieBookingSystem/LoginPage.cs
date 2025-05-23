@@ -17,7 +17,7 @@ namespace MovieBookingSystem
         private string[] imagePaths = new string[]
         {
             "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\minecraftpost.png",
-            "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter.jpeg",
+            "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
         };
         public LoginPage()
         {
@@ -73,7 +73,6 @@ namespace MovieBookingSystem
             sqlCommand.Parameters.AddWithValue("@Password", password);
             if ((int)sqlCommand.ExecuteScalar() > 0)
             {
-                MessageBox.Show("Login Successfully!");
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
                 this.Hide(); // Hide the current form
@@ -90,6 +89,11 @@ namespace MovieBookingSystem
             Form2 registerPage = new Form2();
             registerPage.Show();
             this.Hide(); // Hide the current form
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
