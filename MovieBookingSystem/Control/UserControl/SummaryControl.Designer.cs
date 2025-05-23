@@ -34,8 +34,8 @@ namespace PaymentMethod
             this.label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CardNumberDetails = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CardNameDetails = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.SummaryPhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SummaryAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -94,8 +94,8 @@ namespace PaymentMethod
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2Panel5.Controls.Add(this.guna2HtmlLabel13);
-            this.guna2Panel5.Controls.Add(this.guna2HtmlLabel15);
+            this.guna2Panel5.Controls.Add(this.CardNumberDetails);
+            this.guna2Panel5.Controls.Add(this.CardNameDetails);
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Panel5.Location = new System.Drawing.Point(50, 289);
             this.guna2Panel5.Name = "guna2Panel5";
@@ -113,27 +113,27 @@ namespace PaymentMethod
             this.guna2HtmlLabel11.TabIndex = 90;
             this.guna2HtmlLabel11.Text = "Payment Method";
             // 
-            // guna2HtmlLabel13
+            // CardNumberDetails
             // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(25, 58);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(273, 15);
-            this.guna2HtmlLabel13.TabIndex = 87;
-            this.guna2HtmlLabel13.Text = "checking expires nakalagay (ex. checking expires 12/24)";
+            this.CardNumberDetails.BackColor = System.Drawing.Color.Transparent;
+            this.CardNumberDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardNumberDetails.ForeColor = System.Drawing.Color.White;
+            this.CardNumberDetails.Location = new System.Drawing.Point(25, 58);
+            this.CardNumberDetails.Name = "CardNumberDetails";
+            this.CardNumberDetails.Size = new System.Drawing.Size(273, 15);
+            this.CardNumberDetails.TabIndex = 87;
+            this.CardNumberDetails.Text = "checking expires nakalagay (ex. checking expires 12/24)";
             // 
-            // guna2HtmlLabel15
+            // CardNameDetails
             // 
-            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(25, 35);
-            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            this.guna2HtmlLabel15.Size = new System.Drawing.Size(377, 17);
-            this.guna2HtmlLabel15.TabIndex = 0;
-            this.guna2HtmlLabel15.Text = "name ng card and yung number yung last 4 digit ng number lang kita\r\n";
+            this.CardNameDetails.BackColor = System.Drawing.Color.Transparent;
+            this.CardNameDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardNameDetails.ForeColor = System.Drawing.Color.White;
+            this.CardNameDetails.Location = new System.Drawing.Point(25, 35);
+            this.CardNameDetails.Name = "CardNameDetails";
+            this.CardNameDetails.Size = new System.Drawing.Size(377, 17);
+            this.CardNameDetails.TabIndex = 0;
+            this.CardNameDetails.Text = "name ng card and yung number yung last 4 digit ng number lang kita\r\n";
             // 
             // guna2Panel4
             // 
@@ -372,8 +372,8 @@ namespace PaymentMethod
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel CardNumberDetails;
+        private Guna.UI2.WinForms.Guna2HtmlLabel CardNameDetails;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel label;
         private Guna.UI2.WinForms.Guna2HtmlLabel SummaryPhone;
