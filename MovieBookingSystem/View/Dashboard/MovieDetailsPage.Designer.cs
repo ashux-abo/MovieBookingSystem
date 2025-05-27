@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDetailsPage));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.BackBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.availableCinema = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.moviePosterImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.movieGenre = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -46,17 +50,15 @@
             this.movieRecomendation = new System.Windows.Forms.Label();
             this.MoviePicture = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.movieGenre = new System.Windows.Forms.Label();
-            this.moviePosterImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.availableCinema = new Guna.UI2.WinForms.Guna2ComboBox();
             this.RecommendationPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.BackBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).BeginInit();
             this.RecommendationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +77,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.BackBtn);
             this.guna2Panel1.Controls.Add(this.availableCinema);
             this.guna2Panel1.Controls.Add(this.moviePosterImage);
@@ -98,6 +102,62 @@
             this.guna2Panel1.TabIndex = 5;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
+            // BackBtn
+            // 
+            this.BackBtn.BorderColor = System.Drawing.Color.White;
+            this.BackBtn.BorderRadius = 15;
+            this.BackBtn.BorderThickness = 1;
+            this.BackBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BackBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BackBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BackBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BackBtn.FillColor = System.Drawing.Color.Transparent;
+            this.BackBtn.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackBtn.ForeColor = System.Drawing.Color.White;
+            this.BackBtn.Location = new System.Drawing.Point(12, 13);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(90, 45);
+            this.BackBtn.TabIndex = 23;
+            this.BackBtn.Text = "Back";
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
+            // availableCinema
+            // 
+            this.availableCinema.BackColor = System.Drawing.Color.Transparent;
+            this.availableCinema.BorderRadius = 15;
+            this.availableCinema.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.availableCinema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.availableCinema.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.availableCinema.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.availableCinema.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableCinema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.availableCinema.ItemHeight = 30;
+            this.availableCinema.Location = new System.Drawing.Point(440, 304);
+            this.availableCinema.Name = "availableCinema";
+            this.availableCinema.Size = new System.Drawing.Size(180, 36);
+            this.availableCinema.TabIndex = 21;
+            // 
+            // moviePosterImage
+            // 
+            this.moviePosterImage.ImageRotate = 0F;
+            this.moviePosterImage.Location = new System.Drawing.Point(824, 12);
+            this.moviePosterImage.Name = "moviePosterImage";
+            this.moviePosterImage.Size = new System.Drawing.Size(350, 430);
+            this.moviePosterImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.moviePosterImage.TabIndex = 20;
+            this.moviePosterImage.TabStop = false;
+            // 
+            // movieGenre
+            // 
+            this.movieGenre.AutoSize = true;
+            this.movieGenre.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.movieGenre.ForeColor = System.Drawing.Color.White;
+            this.movieGenre.Location = new System.Drawing.Point(64, 129);
+            this.movieGenre.Name = "movieGenre";
+            this.movieGenre.Size = new System.Drawing.Size(106, 23);
+            this.movieGenre.TabIndex = 19;
+            this.movieGenre.Text = "Horror/Mystery\r\n";
+            // 
             // guna2Button6
             // 
             this.guna2Button6.BorderColor = System.Drawing.Color.White;
@@ -110,7 +170,7 @@
             this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Button6.Font = new System.Drawing.Font("Poppins", 14.25F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(67, 355);
+            this.guna2Button6.Location = new System.Drawing.Point(67, 365);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(117, 45);
             this.guna2Button6.TabIndex = 18;
@@ -129,7 +189,7 @@
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Button5.Font = new System.Drawing.Font("Poppins", 14.25F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(190, 304);
+            this.guna2Button5.Location = new System.Drawing.Point(190, 314);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(117, 45);
             this.guna2Button5.TabIndex = 17;
@@ -148,7 +208,7 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Button4.Font = new System.Drawing.Font("Poppins", 14.25F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(67, 304);
+            this.guna2Button4.Location = new System.Drawing.Point(67, 314);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(117, 45);
             this.guna2Button4.TabIndex = 16;
@@ -167,7 +227,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Button3.Font = new System.Drawing.Font("Poppins", 14.25F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(190, 253);
+            this.guna2Button3.Location = new System.Drawing.Point(190, 263);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(117, 45);
             this.guna2Button3.TabIndex = 15;
@@ -186,7 +246,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.guna2Button2.Font = new System.Drawing.Font("Poppins", 14.25F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(67, 253);
+            this.guna2Button2.Location = new System.Drawing.Point(67, 263);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(117, 45);
             this.guna2Button2.TabIndex = 14;
@@ -315,43 +375,6 @@
             this.guna2PictureBox2.TabIndex = 11;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // movieGenre
-            // 
-            this.movieGenre.AutoSize = true;
-            this.movieGenre.Font = new System.Drawing.Font("Poppins", 9.75F);
-            this.movieGenre.ForeColor = System.Drawing.Color.White;
-            this.movieGenre.Location = new System.Drawing.Point(64, 129);
-            this.movieGenre.Name = "movieGenre";
-            this.movieGenre.Size = new System.Drawing.Size(106, 23);
-            this.movieGenre.TabIndex = 19;
-            this.movieGenre.Text = "Horror/Mystery\r\n";
-            // 
-            // moviePosterImage
-            // 
-            this.moviePosterImage.ImageRotate = 0F;
-            this.moviePosterImage.Location = new System.Drawing.Point(824, 12);
-            this.moviePosterImage.Name = "moviePosterImage";
-            this.moviePosterImage.Size = new System.Drawing.Size(350, 430);
-            this.moviePosterImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.moviePosterImage.TabIndex = 20;
-            this.moviePosterImage.TabStop = false;
-            // 
-            // availableCinema
-            // 
-            this.availableCinema.BackColor = System.Drawing.Color.Transparent;
-            this.availableCinema.BorderRadius = 15;
-            this.availableCinema.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.availableCinema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.availableCinema.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.availableCinema.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.availableCinema.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availableCinema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.availableCinema.ItemHeight = 30;
-            this.availableCinema.Location = new System.Drawing.Point(440, 304);
-            this.availableCinema.Name = "availableCinema";
-            this.availableCinema.Size = new System.Drawing.Size(180, 36);
-            this.availableCinema.TabIndex = 21;
-            // 
             // RecommendationPanel
             // 
             this.RecommendationPanel.AutoScroll = true;
@@ -367,30 +390,31 @@
             this.RecommendationPanel.WrapContents = false;
             this.RecommendationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.RecommendationPanel_Paint);
             // 
-            // BackBtn
-            // 
-            this.BackBtn.BorderColor = System.Drawing.Color.White;
-            this.BackBtn.BorderRadius = 15;
-            this.BackBtn.BorderThickness = 1;
-            this.BackBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BackBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BackBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BackBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BackBtn.FillColor = System.Drawing.Color.Transparent;
-            this.BackBtn.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackBtn.ForeColor = System.Drawing.Color.White;
-            this.BackBtn.Location = new System.Drawing.Point(12, 13);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(90, 45);
-            this.BackBtn.TabIndex = 23;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
-            // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(369, 274);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(369, 316);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Cinema";
             // 
             // MovieDetailsPage
             // 
@@ -410,9 +434,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).EndInit();
             this.RecommendationPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -443,5 +467,7 @@
         private System.Windows.Forms.FlowLayoutPanel RecommendationPanel;
         private Guna.UI2.WinForms.Guna2Button BackBtn;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

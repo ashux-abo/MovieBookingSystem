@@ -156,5 +156,24 @@ namespace MovieBookingSystem
         {
 
         }
+
+        private void showPass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (showPass.Checked)
+            {
+                RegisterPassword.UseSystemPasswordChar = false; // Disable system password char
+                RegisterPassword.PasswordChar = '\0'; // Show password
+            }
+            else
+            {
+                RegisterPassword.UseSystemPasswordChar = true; // Hide password using system default
+            }
+
+        }
+
+        private void RegisterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

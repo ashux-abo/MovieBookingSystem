@@ -65,11 +65,6 @@ namespace PaymentMethod
                 UserCardInfo.cardCurrentInfo = new UserCardInfo(cardName, cardNumber, expDate, cvvNumber);
                 MessageBox.Show("Payment information saved successfully.");
             }
-            else
-            {
-                MessageBox.Show("Invalid input. Please enter numeric values for card number, expiration date, and CVV.");
-            }
-       
             //DEBUG: Verify the data was saved
             return true;
         }
@@ -98,6 +93,31 @@ namespace PaymentMethod
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void ExpDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CardNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CardName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CVV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
         }
     }
 }

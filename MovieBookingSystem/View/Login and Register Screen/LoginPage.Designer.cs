@@ -11,14 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
 
         #region Windows Form Designer generated code
 
@@ -42,8 +35,11 @@
             this.Title = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.showPass = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2ControlBox1
@@ -85,11 +81,12 @@
             this.SideTitle.AutoSize = true;
             this.SideTitle.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SideTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.SideTitle.Location = new System.Drawing.Point(387, 283);
+            this.SideTitle.Location = new System.Drawing.Point(415, 365);
             this.SideTitle.Name = "SideTitle";
             this.SideTitle.Size = new System.Drawing.Size(139, 19);
             this.SideTitle.TabIndex = 19;
             this.SideTitle.Text = "Don\'t have an Account?";
+            this.SideTitle.Click += new System.EventHandler(this.SideTitle_Click);
             // 
             // LoginPassword
             // 
@@ -150,7 +147,7 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Poppins", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(387, 345);
+            this.guna2Button1.Location = new System.Drawing.Point(387, 314);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(294, 45);
             this.guna2Button1.TabIndex = 17;
@@ -190,7 +187,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(522, 283);
+            this.linkLabel1.Location = new System.Drawing.Point(550, 365);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(95, 19);
             this.linkLabel1.TabIndex = 22;
@@ -201,10 +198,39 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.showPass);
+            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.SideTitle);
+            this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(746, 504);
             this.panel2.TabIndex = 23;
+            // 
+            // showPass
+            // 
+            this.showPass.AutoSize = true;
+            this.showPass.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass.ForeColor = System.Drawing.Color.White;
+            this.showPass.Location = new System.Drawing.Point(568, 285);
+            this.showPass.Name = "showPass";
+            this.showPass.Size = new System.Drawing.Size(113, 23);
+            this.showPass.TabIndex = 23;
+            this.showPass.Text = "show password";
+            this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(466, 136);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 24;
+            this.comboBox1.Text = "--Role--";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // LoginPage
             // 
@@ -212,22 +238,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(746, 504);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.SideTitle);
             this.Controls.Add(this.LoginPassword);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +273,7 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox showPass;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

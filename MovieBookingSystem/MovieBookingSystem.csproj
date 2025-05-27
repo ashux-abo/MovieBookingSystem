@@ -66,31 +66,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.cs">
+    <Compile Include="View\Admin\AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="View\Admin\AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login and Register Screen\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login and Register Screen\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.cs">
+    <Compile Include="View\Login and Register Screen\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="View\Login and Register Screen\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.cs">
+    <Compile Include="View\Dashboard\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPage.Designer.cs">
+    <Compile Include="View\Dashboard\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\MovieDetails.cs" />
     <Compile Include="Model\UserCardInfo.cs" />
     <Compile Include="Model\UserInfo.cs" />
-    <Compile Include="MovieDetailsPage.cs">
+    <Compile Include="View\Dashboard\MovieDetailsPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MovieDetailsPage.Designer.cs">
+    <Compile Include="View\Dashboard\MovieDetailsPage.Designer.cs">
       <DependentUpon>MovieDetailsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\UserControl\PaymentControl.cs">
@@ -99,10 +105,10 @@
     <Compile Include="Control\UserControl\PaymentControl.Designer.cs">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentMethodScreenBilling.cs">
+    <Compile Include="View\Dashboard\PaymentMethodScreenBilling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaymentMethodScreenBilling.Designer.cs">
+    <Compile Include="View\Dashboard\PaymentMethodScreenBilling.Designer.cs">
       <DependentUpon>PaymentMethodScreenBilling.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentProcess.cs">
@@ -118,10 +124,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SeatSelection.cs">
+    <Compile Include="View\Dashboard\SeatSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeatSelection.Designer.cs">
+    <Compile Include="View\Dashboard\SeatSelection.Designer.cs">
       <DependentUpon>SeatSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\UserControl\SummaryControl.cs">
@@ -130,22 +136,25 @@
     <Compile Include="Control\UserControl\SummaryControl.Designer.cs">
       <DependentUpon>SummaryControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="View\Admin\AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login and Register Screen\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="View\Login and Register Screen\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
+    <EmbeddedResource Include="View\Dashboard\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovieDetailsPage.resx">
+    <EmbeddedResource Include="View\Dashboard\MovieDetailsPage.resx">
       <DependentUpon>MovieDetailsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserControl\PaymentControl.resx">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentMethodScreenBilling.resx">
+    <EmbeddedResource Include="View\Dashboard\PaymentMethodScreenBilling.resx">
       <DependentUpon>PaymentMethodScreenBilling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -153,7 +162,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeatSelection.resx">
+    <EmbeddedResource Include="View\Dashboard\SeatSelection.resx">
       <DependentUpon>SeatSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserControl\SummaryControl.resx">

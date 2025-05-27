@@ -34,7 +34,6 @@
             this.LastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.Email = new Guna.UI2.WinForms.Guna2TextBox();
             this.RegisterPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Title = new System.Windows.Forms.Label();
             this.SideTitle = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.showPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -140,29 +140,8 @@
             this.RegisterPassword.SelectedText = "";
             this.RegisterPassword.Size = new System.Drawing.Size(294, 36);
             this.RegisterPassword.TabIndex = 3;
-            this.RegisterPassword.Visible = true;
-            // 
-            // guna2CheckBox1
-            // 
-            this.guna2CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 5;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            this.guna2CheckBox1.Location = new System.Drawing.Point(386, 287);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(224, 23);
-            this.guna2CheckBox1.TabIndex = 4;
-            this.guna2CheckBox1.Text = "I agree to the Terms and Conditions";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 5;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            this.RegisterPassword.UseSystemPasswordChar = true;
+            this.RegisterPassword.TextChanged += new System.EventHandler(this.RegisterPassword_TextChanged);
             // 
             // guna2Button1
             // 
@@ -174,7 +153,7 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Poppins", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(386, 322);
+            this.guna2Button1.Location = new System.Drawing.Point(386, 315);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(294, 45);
             this.guna2Button1.TabIndex = 5;
@@ -242,6 +221,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.showPass);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.SideTitle);
             this.panel2.Controls.Add(this.Title);
@@ -249,7 +229,6 @@
             this.panel2.Controls.Add(this.FirstName);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.LastName);
-            this.panel2.Controls.Add(this.guna2CheckBox1);
             this.panel2.Controls.Add(this.Email);
             this.panel2.Controls.Add(this.RegisterPassword);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -288,6 +267,20 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
+            // showPass
+            // 
+            this.showPass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showPass.AutoSize = true;
+            this.showPass.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass.ForeColor = System.Drawing.Color.White;
+            this.showPass.Location = new System.Drawing.Point(567, 286);
+            this.showPass.Name = "showPass";
+            this.showPass.Size = new System.Drawing.Size(113, 23);
+            this.showPass.TabIndex = 24;
+            this.showPass.Text = "show password";
+            this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,7 +311,6 @@
         private Guna.UI2.WinForms.Guna2TextBox Email;
         private Guna.UI2.WinForms.Guna2TextBox LastName;
         private Guna.UI2.WinForms.Guna2TextBox FirstName;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label SideTitle;
         private System.Windows.Forms.Label Title;
@@ -329,5 +321,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox showPass;
     }
 }
