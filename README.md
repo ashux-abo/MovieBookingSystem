@@ -7,7 +7,7 @@ This project is a movie booking system designed for users to browse available mo
 - User registration and login functionality
 - Browse available movies with dynamic display
 - Search functionality for movies
-- SQL integration for user and movie data management
+- SQL integration for user data management
 
 ## Usage
 1. Register as a new user or log in with your credentials.
