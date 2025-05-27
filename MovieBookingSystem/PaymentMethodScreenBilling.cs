@@ -110,6 +110,7 @@ namespace PaymentMethod
 public class UserInfo
 {
 
+<<<<<<< Updated upstream
     private string FullName;
     private string Email;
     private int Phone;
