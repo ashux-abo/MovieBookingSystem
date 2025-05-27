@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace MovieBookingSystem
 {
-    public partial class Form1 : Form
+    public partial class AdminUI : Form
     {
-        public Form1()
+        public AdminUI()
         {
             InitializeComponent();
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
