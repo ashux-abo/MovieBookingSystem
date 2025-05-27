@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDetailsPage));
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.BackBtn = new Guna.UI2.WinForms.Guna2Button();
             this.availableCinema = new Guna.UI2.WinForms.Guna2ComboBox();
             this.moviePosterImage = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -52,27 +53,12 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.RecommendationPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.RecommendationPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // webView21
-            // 
-            this.webView21.AllowExternalDrop = true;
-            this.webView21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.webView21.CreationProperties = null;
-            this.webView21.DefaultBackgroundColor = System.Drawing.Color.Black;
-            this.webView21.Location = new System.Drawing.Point(647, 12);
-            this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(691, 430);
-            this.webView21.TabIndex = 4;
-            this.webView21.ZoomFactor = 1D;
             // 
             // guna2Panel1
             // 
@@ -93,7 +79,6 @@
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.movieDuration);
             this.guna2Panel1.Controls.Add(this.movieDescription);
-            this.guna2Panel1.Controls.Add(this.webView21);
             this.guna2Panel1.Controls.Add(this.movieTitle);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,6 +86,26 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1350, 458);
             this.guna2Panel1.TabIndex = 5;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(369, 274);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(369, 316);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Cinema";
             // 
             // BackBtn
             // 
@@ -396,26 +401,6 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(369, 274);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Location";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(369, 316);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Cinema";
-            // 
             // MovieDetailsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,7 +416,6 @@
             this.Text = "MovieDetailsPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MovieDetailsPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).EndInit();
@@ -444,8 +428,6 @@
         }
 
         #endregion
-
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label movieTitle;
         private System.Windows.Forms.Label movieDuration;
