@@ -12,9 +12,24 @@ namespace MovieBookingSystem
 {
     public partial class AdminUI : Form
     {
+        private string v1;
+        private string v2;
+        private string v;
+
         public AdminUI()
         {
             InitializeComponent();
+        }
+
+        public AdminUI(string v1, string v2)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+        }
+
+        public AdminUI(string v)
+        {
+            this.v = v;
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -32,7 +47,11 @@ namespace MovieBookingSystem
            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                foreach (Form form in Application.OpenForms)
+                {
+                    form.Close();
+                }
+                Application.Exit(); 
             }
             else
             {         

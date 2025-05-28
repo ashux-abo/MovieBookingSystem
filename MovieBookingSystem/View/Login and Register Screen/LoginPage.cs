@@ -162,8 +162,8 @@ namespace MovieBookingSystem
             if (email == "admin@gmail.com" && password == "admin123")
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MainPage mainPage = new MainPage();
-                mainPage.Show();
+                AdminUI adminUI = new AdminUI();
+                adminUI.Show();
                 this.Close();
 
                 return true;
@@ -283,6 +283,11 @@ namespace MovieBookingSystem
                 imageTimer?.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
