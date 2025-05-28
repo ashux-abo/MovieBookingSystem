@@ -54,6 +54,7 @@ namespace PaymentMethod
         {
             string cardName = CardName.Text;
             string expDate = ExpDate.Text;
+            string convertedCardNumber = CardNum.Text;
 
             if (string.IsNullOrWhiteSpace(cardName) || string.IsNullOrWhiteSpace(CardNum.Text) ||
                 string.IsNullOrWhiteSpace(ExpDate.Text) || string.IsNullOrWhiteSpace(CVV.Text))
@@ -61,10 +62,11 @@ namespace PaymentMethod
                 MessageBox.Show("Please fill in all fields.");
                 return false;
             }
-            if (int.TryParse(CardNum.Text, out int cardNumber) && 
+            if (
                 int.TryParse(CVV.Text, out int cvvNumber))
             {
-                UserCardInfo.cardCurrentInfo = new UserCardInfo(cardName, cardNumber, expDate, cvvNumber);
+                string maskedCardNumber = new string('*', convertedCardNumber.Length - 4) + convertedCardNumber.Substring(convertedCardNumber.Length - 4); 
+                UserCardInfo.cardCurrentInfo = new UserCardInfo(cardName, maskedCardNumber, expDate, cvvNumber);
                 MessageBox.Show("Payment information saved successfully.");
             }
             //DEBUG: Verify the data was saved

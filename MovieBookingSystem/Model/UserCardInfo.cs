@@ -10,7 +10,7 @@ namespace MovieBookingSystem.Model
     {
         public static UserCardInfo cardCurrentInfo { get; set; }
         private string cardName;
-        private int cardNum;
+        private string cardNum;
         private string expDate;
         private int cvvNumber;
 
@@ -19,7 +19,7 @@ namespace MovieBookingSystem.Model
             get { return cardName; } set { cardName = value; }
         }
 
-        public int CardNum
+        public string CardNum
         {
             get { return cardNum; }
             set { cardNum = value; }
@@ -40,7 +40,7 @@ namespace MovieBookingSystem.Model
             //default constructor
         }
 
-        public UserCardInfo(string cardName, int cardNumber, string expDate, int cvvNumber)
+        public UserCardInfo(string cardName, string cardNumber, string expDate, int cvvNumber)
         {
             this.cardName = cardName;
             this.cardNum = cardNumber;
