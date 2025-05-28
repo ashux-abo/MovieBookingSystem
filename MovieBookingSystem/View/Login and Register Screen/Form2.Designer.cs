@@ -42,9 +42,9 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.showPass = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.showPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -238,6 +238,20 @@
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // showPass
+            // 
+            this.showPass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showPass.AutoSize = true;
+            this.showPass.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass.ForeColor = System.Drawing.Color.White;
+            this.showPass.Location = new System.Drawing.Point(567, 286);
+            this.showPass.Name = "showPass";
+            this.showPass.Size = new System.Drawing.Size(113, 23);
+            this.showPass.TabIndex = 24;
+            this.showPass.Text = "show password";
+            this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged_1);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
@@ -266,20 +280,6 @@
             this.guna2PictureBox1.TabIndex = 7;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // showPass
-            // 
-            this.showPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.showPass.AutoSize = true;
-            this.showPass.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPass.ForeColor = System.Drawing.Color.White;
-            this.showPass.Location = new System.Drawing.Point(567, 286);
-            this.showPass.Name = "showPass";
-            this.showPass.Size = new System.Drawing.Size(113, 23);
-            this.showPass.TabIndex = 24;
-            this.showPass.Text = "show password";
-            this.showPass.UseVisualStyleBackColor = true;
-            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged_1);
             // 
             // Form2
             // 

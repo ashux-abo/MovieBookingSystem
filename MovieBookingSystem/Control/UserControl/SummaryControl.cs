@@ -18,11 +18,12 @@ namespace PaymentMethod
 
         private UserInfo userInfo;
         private UserCardInfo userCardInfo;
-        public SummaryControl(UserInfo userInfo)
+        public SummaryControl(UserInfo userInfo,UserCardInfo userCardInfo)
 
         {
             InitializeComponent();
             this.userInfo = userInfo;
+            this.userCardInfo = userCardInfo;
         }
 
         public SummaryControl()
@@ -32,6 +33,7 @@ namespace PaymentMethod
 
         private void SummaryControl_Load(object sender, EventArgs e)
         {
+            ShowSummaryCard();
             ShowSummaryDetails();
         }
 
@@ -71,6 +73,7 @@ namespace PaymentMethod
             // First try to use the userInfo passed via constructor
             UserInfo infoToShow = userInfo ?? UserInfo.CurrentUser;
 
+
             if (infoToShow != null)
             {
                 OwnerName.Text = infoToShow.FullName ?? "";
@@ -87,23 +90,31 @@ namespace PaymentMethod
                 SummaryEmail.Text = "No email provided";
             }
 
+
+        }
+
+
+        private void ShowSummaryCard() {
+
             UserCardInfo cardInfoToShow = userCardInfo ?? UserCardInfo.cardCurrentInfo;
-            /*if (cardInfoToShow != null) {
-                CardName.Text = cardInfoToShow.CardName ?? "";
-                CardNum.Text = cardInfoToShow.CardNumber.ToString();
-                ExpDate.Text = cardInfoToShow.ExpirationDate.ToString();
-                CVV.Text = cardInfoToShow.CVV.ToString();
+            if (cardInfoToShow != null)
+            {
+                CardNameDetails.Text = cardInfoToShow.CardName ?? "";
+                CardNumberDetails.Text = cardInfoToShow.CardNum.ToString();
+                ExpDateDetails.Text = cardInfoToShow.ExpDate.ToString();
+
             }
             else
             {
-                // Handle case when no user card info is available
-                CardName.Text = "No card name provided";
-                CardNum.Text = "No card number provided";
-                ExpDate.Text = "No expiration date provided";
-                CVV.Text = "No CVV provided";
+                CardNameDetails.Text = "No card name provided";
+                CardNumberDetails.Text = "No card number provided";
+                ExpDateDetails.Text = "No expiration date provided";
+            }
 
-            }*/
+
         }
+
+
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
         {
