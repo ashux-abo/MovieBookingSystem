@@ -17,7 +17,7 @@ namespace MovieBookingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaymentMethodScreenBilling());
+            Application.Run(new LoginPage());
         }
     }
 }

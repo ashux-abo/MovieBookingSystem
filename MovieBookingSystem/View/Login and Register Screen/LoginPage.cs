@@ -163,7 +163,7 @@ namespace MovieBookingSystem
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AdminUI adminUI = new AdminUI();
-                adminUI.Show();
+                adminUI.ShowDialog();
                 this.Close();
 
                 return true;
@@ -286,6 +286,11 @@ namespace MovieBookingSystem
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
