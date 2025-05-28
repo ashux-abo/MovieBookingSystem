@@ -33,6 +33,8 @@ namespace PaymentMethod
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ExitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.CreditDebitLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.PaypalBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -45,7 +47,6 @@ namespace PaymentMethod
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.CVV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ExpDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.CardNum = new Guna.UI2.WinForms.Guna2TextBox();
             this.CardName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -55,8 +56,7 @@ namespace PaymentMethod
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.ExitBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditDebitLogo)).BeginInit();
@@ -67,6 +67,7 @@ namespace PaymentMethod
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ExpDate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ExitBtn);
             this.panel1.Controls.Add(this.guna2PictureBox2);
@@ -81,7 +82,6 @@ namespace PaymentMethod
             this.panel1.Controls.Add(this.guna2HtmlLabel6);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.CVV);
-            this.panel1.Controls.Add(this.ExpDate);
             this.panel1.Controls.Add(this.CardNum);
             this.panel1.Controls.Add(this.CardName);
             this.panel1.Controls.Add(this.guna2Panel3);
@@ -93,6 +93,36 @@ namespace PaymentMethod
             this.panel1.Size = new System.Drawing.Size(771, 463);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(34, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 28);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "Payment Method";
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.BorderColor = System.Drawing.Color.White;
+            this.ExitBtn.BorderRadius = 15;
+            this.ExitBtn.BorderThickness = 1;
+            this.ExitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ExitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ExitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ExitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ExitBtn.FillColor = System.Drawing.Color.Transparent;
+            this.ExitBtn.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.ExitBtn.ForeColor = System.Drawing.Color.White;
+            this.ExitBtn.Location = new System.Drawing.Point(12, 421);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(58, 30);
+            this.ExitBtn.TabIndex = 92;
+            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // guna2PictureBox2
             // 
@@ -261,33 +291,13 @@ namespace PaymentMethod
             this.CVV.Font = new System.Drawing.Font("Poppins", 9F);
             this.CVV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CVV.Location = new System.Drawing.Point(392, 294);
+            this.CVV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CVV.Name = "CVV";
             this.CVV.PlaceholderText = "";
             this.CVV.SelectedText = "";
             this.CVV.Size = new System.Drawing.Size(328, 31);
             this.CVV.TabIndex = 80;
             this.CVV.TextChanged += new System.EventHandler(this.CVV_TextChanged);
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.BorderRadius = 15;
-            this.ExpDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ExpDate.DefaultText = "";
-            this.ExpDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ExpDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ExpDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ExpDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ExpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.ExpDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ExpDate.Font = new System.Drawing.Font("Poppins", 9F);
-            this.ExpDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ExpDate.Location = new System.Drawing.Point(50, 294);
-            this.ExpDate.Name = "ExpDate";
-            this.ExpDate.PlaceholderText = "";
-            this.ExpDate.SelectedText = "";
-            this.ExpDate.Size = new System.Drawing.Size(328, 31);
-            this.ExpDate.TabIndex = 79;
-            this.ExpDate.TextChanged += new System.EventHandler(this.ExpDate_TextChanged);
             // 
             // CardNum
             // 
@@ -303,6 +313,7 @@ namespace PaymentMethod
             this.CardNum.Font = new System.Drawing.Font("Poppins", 9F);
             this.CardNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CardNum.Location = new System.Drawing.Point(392, 232);
+            this.CardNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CardNum.Name = "CardNum";
             this.CardNum.PlaceholderText = "";
             this.CardNum.SelectedText = "";
@@ -324,6 +335,7 @@ namespace PaymentMethod
             this.CardName.Font = new System.Drawing.Font("Poppins", 9F);
             this.CardName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CardName.Location = new System.Drawing.Point(50, 232);
+            this.CardName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CardName.Name = "CardName";
             this.CardName.PlaceholderText = "";
             this.CardName.SelectedText = "";
@@ -403,35 +415,25 @@ namespace PaymentMethod
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Billing";
             // 
-            // ExitBtn
+            // ExpDate
             // 
-            this.ExitBtn.BorderColor = System.Drawing.Color.White;
-            this.ExitBtn.BorderRadius = 15;
-            this.ExitBtn.BorderThickness = 1;
-            this.ExitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ExitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ExitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ExitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ExitBtn.FillColor = System.Drawing.Color.Transparent;
-            this.ExitBtn.Font = new System.Drawing.Font("Poppins", 11.25F);
-            this.ExitBtn.ForeColor = System.Drawing.Color.White;
-            this.ExitBtn.Location = new System.Drawing.Point(12, 421);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(58, 30);
-            this.ExitBtn.TabIndex = 92;
-            this.ExitBtn.Text = "Exit";
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 28);
-            this.label1.TabIndex = 93;
-            this.label1.Text = "Payment Method";
+            this.ExpDate.BackColor = System.Drawing.Color.Transparent;
+            this.ExpDate.BorderColor = System.Drawing.Color.White;
+            this.ExpDate.BorderRadius = 15;
+            this.ExpDate.BorderThickness = 1;
+            this.ExpDate.Checked = true;
+            this.ExpDate.FillColor = System.Drawing.Color.Black;
+            this.ExpDate.Font = new System.Drawing.Font("Poppins", 9F);
+            this.ExpDate.ForeColor = System.Drawing.Color.White;
+            this.ExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.ExpDate.Location = new System.Drawing.Point(51, 294);
+            this.ExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.Size = new System.Drawing.Size(327, 31);
+            this.ExpDate.TabIndex = 94;
+            this.ExpDate.UseTransparentBackground = true;
+            this.ExpDate.Value = new System.DateTime(2025, 5, 28, 23, 6, 21, 186);
             // 
             // PaymentControl
             // 
@@ -471,7 +473,6 @@ namespace PaymentMethod
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox CVV;
-        private Guna.UI2.WinForms.Guna2TextBox ExpDate;
         private Guna.UI2.WinForms.Guna2TextBox CardNum;
         private Guna.UI2.WinForms.Guna2TextBox CardName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -483,5 +484,6 @@ namespace PaymentMethod
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button ExitBtn;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ExpDate;
     }
 }
