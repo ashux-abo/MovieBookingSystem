@@ -99,19 +99,16 @@ namespace PaymentMethod
             UserCardInfo cardInfoToShow = userCardInfo ?? UserCardInfo.cardCurrentInfo;
             if (cardInfoToShow != null)
             {
-                CardNameDetails.Text = "No card name provided";
-                CardNumberDetails.Text = "No card number provided";
-                ExpDateDetails.Text = "No expiration date provided";
-
-            }
-            else
-            {
-                // Handle case when no user card info is available
                 CardNameDetails.Text = cardInfoToShow.CardName ?? "";
                 CardNumberDetails.Text = cardInfoToShow.CardNum.ToString();
                 ExpDateDetails.Text = cardInfoToShow.ExpDate.ToString();
 
-
+            }
+            else
+            {
+                CardNameDetails.Text = "No card name provided";
+                CardNumberDetails.Text = "No card number provided";
+                ExpDateDetails.Text = "No expiration date provided";
             }
 
 

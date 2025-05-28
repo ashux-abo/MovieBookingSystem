@@ -72,12 +72,12 @@ namespace PaymentMethod
         }
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            if (UserInfo.CurrentUser != null)
+            if (UserInfo.CurrentUser != null || UserCardInfo.cardCurrentInfo != null)
             {
                 if (SaveUserPaymentInfo())
                 {
                     MessageBox.Show($"User info found!\nName: {UserInfo.CurrentUser.FullName}\nEmail: {UserInfo.CurrentUser.Email}");
-                    SummaryControl summaryControl = new SummaryControl(UserInfo.CurrentUser,UserCardInfo.cardCurrentInfo);
+                    SummaryControl summaryControl = new SummaryControl(UserInfo.CurrentUser, UserCardInfo.cardCurrentInfo);
                     addUserControl(summaryControl);
                 }
             }
