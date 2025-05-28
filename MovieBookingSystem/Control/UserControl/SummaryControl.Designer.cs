@@ -34,8 +34,8 @@ namespace PaymentMethod
             this.label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CardNumberDetails = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CardNameDetails = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.SummaryPhone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SummaryAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,6 +54,7 @@ namespace PaymentMethod
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.ExitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -64,6 +65,7 @@ namespace PaymentMethod
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ExitBtn);
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.guna2Panel5);
             this.panel1.Controls.Add(this.guna2Panel4);
@@ -82,11 +84,11 @@ namespace PaymentMethod
             // label
             // 
             this.label.BackColor = System.Drawing.Color.Transparent;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.White;
             this.label.Location = new System.Drawing.Point(54, 115);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(120, 18);
+            this.label.Size = new System.Drawing.Size(96, 21);
             this.label.TabIndex = 92;
             this.label.Text = "Summary Details";
             this.label.Click += new System.EventHandler(this.label_Click);
@@ -94,9 +96,10 @@ namespace PaymentMethod
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2Panel5.Controls.Add(this.guna2HtmlLabel13);
-            this.guna2Panel5.Controls.Add(this.guna2HtmlLabel15);
+            this.guna2Panel5.Controls.Add(this.CardNumberDetails);
+            this.guna2Panel5.Controls.Add(this.CardNameDetails);
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel5.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel5.Location = new System.Drawing.Point(50, 289);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(670, 89);
@@ -105,35 +108,35 @@ namespace PaymentMethod
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(25, 8);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(118, 18);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(118, 25);
             this.guna2HtmlLabel11.TabIndex = 90;
             this.guna2HtmlLabel11.Text = "Payment Method";
             // 
-            // guna2HtmlLabel13
+            // CardNumberDetails
             // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(25, 58);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(273, 15);
-            this.guna2HtmlLabel13.TabIndex = 87;
-            this.guna2HtmlLabel13.Text = "checking expires nakalagay (ex. checking expires 12/24)";
+            this.CardNumberDetails.BackColor = System.Drawing.Color.Transparent;
+            this.CardNumberDetails.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardNumberDetails.ForeColor = System.Drawing.Color.White;
+            this.CardNumberDetails.Location = new System.Drawing.Point(25, 58);
+            this.CardNumberDetails.Name = "CardNumberDetails";
+            this.CardNumberDetails.Size = new System.Drawing.Size(310, 21);
+            this.CardNumberDetails.TabIndex = 87;
+            this.CardNumberDetails.Text = "checking expires nakalagay (ex. checking expires 12/24)";
             // 
-            // guna2HtmlLabel15
+            // CardNameDetails
             // 
-            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(25, 35);
-            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            this.guna2HtmlLabel15.Size = new System.Drawing.Size(377, 17);
-            this.guna2HtmlLabel15.TabIndex = 0;
-            this.guna2HtmlLabel15.Text = "name ng card and yung number yung last 4 digit ng number lang kita\r\n";
+            this.CardNameDetails.BackColor = System.Drawing.Color.Transparent;
+            this.CardNameDetails.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardNameDetails.ForeColor = System.Drawing.Color.White;
+            this.CardNameDetails.Location = new System.Drawing.Point(25, 35);
+            this.CardNameDetails.Name = "CardNameDetails";
+            this.CardNameDetails.Size = new System.Drawing.Size(383, 21);
+            this.CardNameDetails.TabIndex = 0;
+            this.CardNameDetails.Text = "name ng card and yung number yung last 4 digit ng number lang kita\r\n";
             // 
             // guna2Panel4
             // 
@@ -146,6 +149,7 @@ namespace PaymentMethod
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel4.Controls.Add(this.OwnerName);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel4.Location = new System.Drawing.Point(50, 139);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(670, 146);
@@ -155,98 +159,99 @@ namespace PaymentMethod
             // SummaryPhone
             // 
             this.SummaryPhone.BackColor = System.Drawing.Color.Transparent;
-            this.SummaryPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SummaryPhone.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SummaryPhone.ForeColor = System.Drawing.Color.White;
-            this.SummaryPhone.Location = new System.Drawing.Point(81, 88);
+            this.SummaryPhone.Location = new System.Drawing.Point(81, 78);
             this.SummaryPhone.Name = "SummaryPhone";
-            this.SummaryPhone.Size = new System.Drawing.Size(109, 17);
+            this.SummaryPhone.Size = new System.Drawing.Size(103, 21);
             this.SummaryPhone.TabIndex = 91;
             this.SummaryPhone.Text = "guna2HtmlLabel14";
             // 
             // SummaryAddress
             // 
             this.SummaryAddress.BackColor = System.Drawing.Color.Transparent;
-            this.SummaryAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SummaryAddress.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SummaryAddress.ForeColor = System.Drawing.Color.White;
-            this.SummaryAddress.Location = new System.Drawing.Point(82, 58);
+            this.SummaryAddress.Location = new System.Drawing.Point(82, 53);
             this.SummaryAddress.Name = "SummaryAddress";
-            this.SummaryAddress.Size = new System.Drawing.Size(109, 17);
+            this.SummaryAddress.Size = new System.Drawing.Size(102, 21);
             this.SummaryAddress.TabIndex = 90;
             this.SummaryAddress.Text = "guna2HtmlLabel12";
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(25, 115);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(25, 103);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(41, 15);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(33, 21);
             this.guna2HtmlLabel10.TabIndex = 89;
-            this.guna2HtmlLabel10.Text = "Email :";
+            this.guna2HtmlLabel10.Text = "Email ";
             // 
             // SummaryEmail
             // 
             this.SummaryEmail.BackColor = System.Drawing.Color.Transparent;
-            this.SummaryEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SummaryEmail.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SummaryEmail.ForeColor = System.Drawing.Color.White;
-            this.SummaryEmail.Location = new System.Drawing.Point(72, 113);
+            this.SummaryEmail.Location = new System.Drawing.Point(81, 103);
             this.SummaryEmail.Name = "SummaryEmail";
-            this.SummaryEmail.Size = new System.Drawing.Size(97, 17);
+            this.SummaryEmail.Size = new System.Drawing.Size(96, 21);
             this.SummaryEmail.TabIndex = 94;
             this.SummaryEmail.Text = "Summary Details";
             // 
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(25, 90);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(25, 79);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(47, 15);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(37, 21);
             this.guna2HtmlLabel9.TabIndex = 88;
-            this.guna2HtmlLabel9.Text = "Phone :";
+            this.guna2HtmlLabel9.Text = "Phone ";
             // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(25, 58);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(25, 54);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(56, 15);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(47, 21);
             this.guna2HtmlLabel8.TabIndex = 87;
-            this.guna2HtmlLabel8.Text = "Address :";
+            this.guna2HtmlLabel8.Text = "Address";
             // 
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(25, 8);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(24, 8);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(99, 18);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(94, 25);
             this.guna2HtmlLabel7.TabIndex = 86;
             this.guna2HtmlLabel7.Text = "Billing Details";
             // 
             // OwnerName
             // 
             this.OwnerName.BackColor = System.Drawing.Color.Transparent;
-            this.OwnerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OwnerName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OwnerName.ForeColor = System.Drawing.Color.White;
-            this.OwnerName.Location = new System.Drawing.Point(25, 32);
+            this.OwnerName.Location = new System.Drawing.Point(24, 32);
             this.OwnerName.Name = "OwnerName";
-            this.OwnerName.Size = new System.Drawing.Size(91, 15);
+            this.OwnerName.Size = new System.Drawing.Size(90, 21);
             this.OwnerName.TabIndex = 0;
             this.OwnerName.Text = "Name ng owner";
             // 
             // guna2Button2
             // 
+            this.guna2Button2.BorderRadius = 15;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.Font = new System.Drawing.Font("Poppins", 8.25F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(452, 384);
             this.guna2Button2.Name = "guna2Button2";
@@ -257,11 +262,12 @@ namespace PaymentMethod
             // 
             // guna2Button1
             // 
+            this.guna2Button1.BorderRadius = 15;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Poppins", 8.25F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(563, 384);
             this.guna2Button1.Name = "guna2Button1";
@@ -274,6 +280,7 @@ namespace PaymentMethod
             // 
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel3.Location = new System.Drawing.Point(494, 49);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(225, 42);
@@ -294,6 +301,7 @@ namespace PaymentMethod
             // 
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel3);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel2.Location = new System.Drawing.Point(272, 49);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(225, 42);
@@ -315,6 +323,7 @@ namespace PaymentMethod
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel1.Location = new System.Drawing.Point(50, 49);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(225, 42);
@@ -341,6 +350,25 @@ namespace PaymentMethod
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(46, 18);
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Billing";
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.BorderColor = System.Drawing.Color.White;
+            this.ExitBtn.BorderRadius = 15;
+            this.ExitBtn.BorderThickness = 1;
+            this.ExitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ExitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ExitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ExitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ExitBtn.FillColor = System.Drawing.Color.Transparent;
+            this.ExitBtn.Font = new System.Drawing.Font("Poppins", 11.25F);
+            this.ExitBtn.ForeColor = System.Drawing.Color.White;
+            this.ExitBtn.Location = new System.Drawing.Point(12, 421);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(58, 30);
+            this.ExitBtn.TabIndex = 99;
+            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // SummaryControl
             // 
@@ -372,8 +400,8 @@ namespace PaymentMethod
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel CardNumberDetails;
+        private Guna.UI2.WinForms.Guna2HtmlLabel CardNameDetails;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel label;
         private Guna.UI2.WinForms.Guna2HtmlLabel SummaryPhone;
@@ -393,5 +421,6 @@ namespace PaymentMethod
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2Button ExitBtn;
     }
 }

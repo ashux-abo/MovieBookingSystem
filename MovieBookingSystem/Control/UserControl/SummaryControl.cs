@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PaymentMethod;
 using MovieBookingSystem.Model;
 using System.Net.Mail;
+using MovieBookingSystem;
 namespace PaymentMethod
 {
     public partial class SummaryControl : UserControl
@@ -17,7 +18,6 @@ namespace PaymentMethod
 
         private UserInfo userInfo;
         private UserCardInfo userCardInfo;
-        // Constructor that accepts UserInfo
         public SummaryControl(UserInfo userInfo)
 
         {
@@ -52,6 +52,7 @@ namespace PaymentMethod
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Booking Confirmed");
+            this.ParentForm.Close();
         }
 
         private void label_Click(object sender, EventArgs e)
@@ -109,5 +110,9 @@ namespace PaymentMethod
            
         }
 
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+        }
     }
 }

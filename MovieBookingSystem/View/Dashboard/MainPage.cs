@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MovieBookingSystem.Model;
 
 namespace MovieBookingSystem
 {
@@ -52,7 +53,8 @@ namespace MovieBookingSystem
                 ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
                 Description = "Miles Morales returns for the next chapter of the Oscar-winning Spider-Verse saga.",
                 Rating = "PG",
-                Duration = "2h 20m"
+                Duration = "2h 20m",
+                Genre = "Animation, Action, Adventure" // Added Genre property
             });
 
             movies.Add(new Movie
@@ -61,52 +63,58 @@ namespace MovieBookingSystem
                 ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\minecraftpost.png",
                 Description = "A live-action adaptation of the popular video game Minecraft.",
                 Rating = "PG-13",
-                Duration = "1h 45m"
+                Duration = "1h 45m",
+                Genre = "Adventure, Comedy, Family"
             });
 
             movies.Add(new Movie
             {
                 Title = "Final Destination: Bloodline",
                 ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\finaldestination6-exhibition-onesheet.jpg",
-                Description = "Plagued by a violent and recurring nightmare, a college student heads home to track\r\ndown the one person who might be able to break the cycle of death and save her\r\nfamily from the grisly demise that inevitably awaits them all.\r\n.",
+                Description = "Plagued by a violent and recurring nightmare, a college student heads home to track\r\ndown the one person who might be able to break the cycle of death and save her\r\nfamily from the grisly demise that inevitably awaits them all.",
                 Rating = "PG-13",
-                Duration = "2h 28m"
+                Duration = "2h 28m",
+                Genre = "Horror, Thriller"
             });
 
             movies.Add(new Movie
             {
                 Title = "Interstellar",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\interstellarposter.jpeg",
                 Description = "A team of explorers travel through a wormhole in search of a new home for humanity.",
                 Rating = "PG-13",
-                Duration = "2h 49m"
+                Duration = "2h 49m",
+                Genre = "Sci-Fi, Drama"
             });
 
             movies.Add(new Movie
             {
                 Title = "John Wick: Chapter 4",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\john_wick_chapter_four_ver2.jpg",
                 Description = "John Wick faces his toughest challenge yet as he fights for survival against a powerful new enemy.",
                 Rating = "R",
-                Duration = "2h 49m"
+                Duration = "2h 49m",
+                Genre = "Action, Crime, Thriller"
             });
 
             movies.Add(new Movie
             {
                 Title = "Avatar: The Way of Water",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\avatar_the_way_of_water.jpg",
                 Description = "Jake Sully and Neytiri must protect their family from new threats in the oceans of Pandora.",
                 Rating = "PG-13",
-                Duration = "3h 12m"
+                Duration = "3h 12m",
+                Genre = "Sci-Fi, Adventure, Action"
             });
 
             movies.Add(new Movie
             {
                 Title = "The Super Mario Bros. Movie",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg",
+                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\super_mario_bros_the_movie_ver2.jpg",
                 Description = "Mario and Luigi embark on an adventure to save the Mushroom Kingdom.",
                 Rating = "PG",
-                Duration = "1h 32m"
+                Duration = "1h 32m",
+                Genre = "Animation, Adventure, Comedy"
             });
         }
 
@@ -138,7 +146,7 @@ namespace MovieBookingSystem
             var pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             pictureBox.Size = new Size(cardWidth, cardHeight - 60);
             pictureBox.Location = new Point(0, 0);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.Image = Image.FromFile(movie.ImagePath);
             pictureBox.BorderRadius = 10;
 
@@ -267,6 +275,15 @@ namespace MovieBookingSystem
 
         private void OpenMovieDetails(Movie movie)
         {
+            // Set the current movie info in the static property
+            MovieDetails.movieCurrentInfo = new MovieDetails(
+                movie.Title,
+                movie.Description,
+                movie.ImagePath,
+                movie.Genre, 
+                movie.Duration
+            );
+
             // Create and show the movie details form
             MovieDetailsPage detailsPage = new MovieDetailsPage();
             detailsPage.Show();
@@ -333,5 +350,6 @@ namespace MovieBookingSystem
         public string Description { get; set; }
         public string Rating { get; set; }
         public string Duration { get; set; }
+        public string Genre { get; set; }
     }
 }
