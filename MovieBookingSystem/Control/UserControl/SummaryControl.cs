@@ -87,8 +87,8 @@ namespace PaymentMethod
                 SummaryEmail.Text = "No email provided";
             }
 
-            UserCardInfo cardInfoToShow = userCardInfo ?? UserCardInfo.cardCurrentInfo;
-            /*if (cardInfoToShow != null) {
+         /*   UserCardInfo cardInfoToShow = userCardInfo ?? UserCardInfo.cardCurrentInfo;
+            if (cardInfoToShow != null) {
                 CardName.Text = cardInfoToShow.CardName ?? "";
                 CardNum.Text = cardInfoToShow.CardNumber.ToString();
                 ExpDate.Text = cardInfoToShow.ExpirationDate.ToString();
@@ -102,7 +102,7 @@ namespace PaymentMethod
                 ExpDate.Text = "No expiration date provided";
                 CVV.Text = "No CVV provided";
 
-            }*/
+            } */
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
