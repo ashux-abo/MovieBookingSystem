@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MovieBookingSystem.Model; 
+using MovieBookingSystem.Model;
+
 
 namespace PaymentMethod
 {
@@ -52,6 +53,7 @@ namespace PaymentMethod
         private bool SaveUserPaymentInfo()
         {
             string cardName = CardName.Text;
+            string expDate = ExpDate.Text;
 
             if (string.IsNullOrWhiteSpace(cardName) || string.IsNullOrWhiteSpace(CardNum.Text) ||
                 string.IsNullOrWhiteSpace(ExpDate.Text) || string.IsNullOrWhiteSpace(CVV.Text))
@@ -59,7 +61,7 @@ namespace PaymentMethod
                 MessageBox.Show("Please fill in all fields.");
                 return false;
             }
-            if (int.TryParse(CardNum.Text, out int cardNumber) && int.TryParse(ExpDate.Text, out int expDate) &&
+            if (int.TryParse(CardNum.Text, out int cardNumber) && 
                 int.TryParse(CVV.Text, out int cvvNumber))
             {
                 UserCardInfo.cardCurrentInfo = new UserCardInfo(cardName, cardNumber, expDate, cvvNumber);
@@ -75,7 +77,7 @@ namespace PaymentMethod
                 if (SaveUserPaymentInfo())
                 {
                     MessageBox.Show($"User info found!\nName: {UserInfo.CurrentUser.FullName}\nEmail: {UserInfo.CurrentUser.Email}");
-                    SummaryControl summaryControl = new SummaryControl(UserInfo.CurrentUser);
+                    SummaryControl summaryControl = new SummaryControl(UserInfo.CurrentUser,UserCardInfo.cardCurrentInfo);
                     addUserControl(summaryControl);
                 }
             }
@@ -88,7 +90,9 @@ namespace PaymentMethod
                 {
                     parentForm.Close(); 
                 }
+
             }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

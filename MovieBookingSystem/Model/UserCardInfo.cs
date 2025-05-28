@@ -11,7 +11,7 @@ namespace MovieBookingSystem.Model
         public static UserCardInfo cardCurrentInfo { get; set; }
         private string cardName;
         private int cardNum;
-        private int expDate;
+        private string expDate;
         private int cvvNumber;
 
         public string CardName
@@ -24,7 +24,7 @@ namespace MovieBookingSystem.Model
             get { return cardNum; }
             set { cardNum = value; }
         }
-        public int ExpDate
+        public string ExpDate
         {
             get { return expDate; }
             set { expDate = value; }
@@ -40,13 +40,17 @@ namespace MovieBookingSystem.Model
             //default constructor
         }
 
-        public UserCardInfo(string cardName, int cardNumber, int expDate, int cvvNumber)
+        public UserCardInfo(string cardName, int cardNumber, string expDate, int cvvNumber)
         {
             this.cardName = cardName;
             this.cardNum = cardNumber;
             this.expDate = expDate;
             this.cvvNumber = cvvNumber;
         }
+
+
+
+
 
     }
 }
