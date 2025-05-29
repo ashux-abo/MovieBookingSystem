@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label12 = new Label();
+            dataGridView1 = new DataGridView();
             label3 = new Label();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            label12 = new Label();
-            label16 = new Label();
+            pictureBox1 = new PictureBox();
+            button6 = new Button();
+            button7 = new Button();
             label19 = new Label();
             label20 = new Label();
             label21 = new Label();
@@ -44,9 +46,7 @@
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
-            button6 = new Button();
-            button7 = new Button();
-            pictureBox1 = new PictureBox();
+            label16 = new Label();
             panel3 = new Panel();
             label4 = new Label();
             label2 = new Label();
@@ -62,8 +62,8 @@
             label17 = new Label();
             textBox1 = new TextBox();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -77,8 +77,28 @@
             panel1.ForeColor = Color.Black;
             panel1.Location = new Point(18, 18);
             panel1.Name = "panel1";
-            panel1.Size = new Size(410, 498);
+            panel1.Size = new Size(428, 603);
             panel1.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.ImageAlign = ContentAlignment.MiddleLeft;
+            label12.Location = new Point(12, 11);
+            label12.Name = "label12";
+            label12.Size = new Size(123, 19);
+            label12.TabIndex = 14;
+            label12.Text = "Available Movies :";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 33);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(404, 552);
+            dataGridView1.TabIndex = 5;
             // 
             // label3
             // 
@@ -107,166 +127,27 @@
             panel2.Controls.Add(label27);
             panel2.Controls.Add(label28);
             panel2.Controls.Add(label16);
-            panel2.Location = new Point(443, 18);
+            panel2.Location = new Point(462, 18);
             panel2.Name = "panel2";
-            panel2.Size = new Size(439, 204);
+            panel2.Size = new Size(661, 228);
             panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // pictureBox1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 33);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(381, 451);
-            dataGridView1.TabIndex = 5;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.White;
-            label12.ImageAlign = ContentAlignment.MiddleLeft;
-            label12.Location = new Point(12, 11);
-            label12.Name = "label12";
-            label12.Size = new Size(123, 19);
-            label12.TabIndex = 14;
-            label12.Text = "Available Movies :";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.FromArgb(30, 31, 32);
-            label16.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.White;
-            label16.ImageAlign = ContentAlignment.MiddleLeft;
-            label16.Location = new Point(171, 90);
-            label16.Name = "label16";
-            label16.Size = new Size(84, 19);
-            label16.TabIndex = 17;
-            label16.Text = "Total Price :";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Poppins", 8.25F);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(285, 33);
-            label19.Name = "label19";
-            label19.Size = new Size(47, 19);
-            label19.TabIndex = 29;
-            label19.Text = "label19";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Poppins", 8.25F);
-            label20.ForeColor = Color.White;
-            label20.Location = new Point(285, 109);
-            label20.Name = "label20";
-            label20.Size = new Size(49, 19);
-            label20.TabIndex = 33;
-            label20.Text = "label20";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Poppins", 8.25F);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(285, 71);
-            label21.Name = "label21";
-            label21.Size = new Size(46, 19);
-            label21.TabIndex = 31;
-            label21.Text = "label21";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.White;
-            label22.ImageAlign = ContentAlignment.MiddleLeft;
-            label22.Location = new Point(163, 109);
-            label22.Name = "label22";
-            label22.Size = new Size(107, 19);
-            label22.TabIndex = 28;
-            label22.Text = "Available Seat :";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.ForeColor = Color.White;
-            label23.ImageAlign = ContentAlignment.MiddleLeft;
-            label23.Location = new Point(169, 90);
-            label23.Name = "label23";
-            label23.Size = new Size(101, 19);
-            label23.TabIndex = 27;
-            label23.Text = "Regular Price :";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.ForeColor = Color.White;
-            label24.ImageAlign = ContentAlignment.MiddleLeft;
-            label24.Location = new Point(176, 52);
-            label24.Name = "label24";
-            label24.Size = new Size(94, 19);
-            label24.TabIndex = 25;
-            label24.Text = "Movie Name :";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.White;
-            label25.ImageAlign = ContentAlignment.MiddleLeft;
-            label25.Location = new Point(215, 71);
-            label25.Name = "label25";
-            label25.Size = new Size(55, 19);
-            label25.TabIndex = 26;
-            label25.Text = "Genre :";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Poppins", 8.25F);
-            label26.ForeColor = Color.White;
-            label26.Location = new Point(285, 52);
-            label26.Name = "label26";
-            label26.Size = new Size(49, 19);
-            label26.TabIndex = 30;
-            label26.Text = "label26";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label27.ForeColor = Color.White;
-            label27.ImageAlign = ContentAlignment.MiddleLeft;
-            label27.Location = new Point(200, 33);
-            label27.Name = "label27";
-            label27.Size = new Size(70, 19);
-            label27.TabIndex = 24;
-            label27.Text = "Movie ID :";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Font = new Font("Poppins", 8.25F);
-            label28.ForeColor = Color.White;
-            label28.Location = new Point(285, 90);
-            label28.Name = "label28";
-            label28.Size = new Size(49, 19);
-            label28.TabIndex = 32;
-            label28.Text = "label28";
+            pictureBox1.Location = new Point(29, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(136, 177);
+            pictureBox1.TabIndex = 36;
+            pictureBox1.TabStop = false;
             // 
             // button6
             // 
             button6.BackColor = Color.FromArgb(94, 148, 255);
+            button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Poppins", 9F, FontStyle.Bold);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(332, 152);
+            button6.Location = new Point(550, 181);
             button6.Name = "button6";
             button6.Size = new Size(83, 29);
             button6.TabIndex = 35;
@@ -276,23 +157,144 @@
             // button7
             // 
             button7.BackColor = Color.FromArgb(94, 148, 255);
+            button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Poppins", 9F, FontStyle.Bold);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(205, 152);
+            button7.Location = new Point(424, 181);
             button7.Name = "button7";
             button7.Size = new Size(111, 29);
             button7.TabIndex = 34;
             button7.Text = "SELECT MOVIE";
             button7.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // label19
             // 
-            pictureBox1.Location = new Point(35, 33);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 148);
-            pictureBox1.TabIndex = 36;
-            pictureBox1.TabStop = false;
+            label19.AutoSize = true;
+            label19.Font = new Font("Poppins", 9F);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(325, 33);
+            label19.Name = "label19";
+            label19.Size = new Size(51, 22);
+            label19.TabIndex = 29;
+            label19.Text = "label19";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Poppins", 9F);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(325, 109);
+            label20.Name = "label20";
+            label20.Size = new Size(54, 22);
+            label20.TabIndex = 33;
+            label20.Text = "label20";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Poppins", 9F);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(325, 71);
+            label21.Name = "label21";
+            label21.Size = new Size(50, 22);
+            label21.TabIndex = 31;
+            label21.Text = "label21";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label22.ForeColor = Color.White;
+            label22.ImageAlign = ContentAlignment.MiddleLeft;
+            label22.Location = new Point(203, 109);
+            label22.Name = "label22";
+            label22.Size = new Size(116, 22);
+            label22.TabIndex = 28;
+            label22.Text = "Available Seat :";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label23.ForeColor = Color.White;
+            label23.ImageAlign = ContentAlignment.MiddleLeft;
+            label23.Location = new Point(209, 90);
+            label23.Name = "label23";
+            label23.Size = new Size(107, 22);
+            label23.TabIndex = 27;
+            label23.Text = "Regular Price :";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label24.ForeColor = Color.White;
+            label24.ImageAlign = ContentAlignment.MiddleLeft;
+            label24.Location = new Point(216, 52);
+            label24.Name = "label24";
+            label24.Size = new Size(101, 22);
+            label24.TabIndex = 25;
+            label24.Text = "Movie Name :";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label25.ForeColor = Color.White;
+            label25.ImageAlign = ContentAlignment.MiddleLeft;
+            label25.Location = new Point(255, 71);
+            label25.Name = "label25";
+            label25.Size = new Size(58, 22);
+            label25.TabIndex = 26;
+            label25.Text = "Genre :";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Poppins", 9F);
+            label26.ForeColor = Color.White;
+            label26.Location = new Point(325, 52);
+            label26.Name = "label26";
+            label26.Size = new Size(54, 22);
+            label26.TabIndex = 30;
+            label26.Text = "label26";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label27.ForeColor = Color.White;
+            label27.ImageAlign = ContentAlignment.MiddleLeft;
+            label27.Location = new Point(240, 33);
+            label27.Name = "label27";
+            label27.Size = new Size(75, 22);
+            label27.TabIndex = 24;
+            label27.Text = "Movie ID :";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Poppins", 9F);
+            label28.ForeColor = Color.White;
+            label28.Location = new Point(325, 90);
+            label28.Name = "label28";
+            label28.Size = new Size(54, 22);
+            label28.TabIndex = 32;
+            label28.Text = "label28";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.FromArgb(30, 31, 32);
+            label16.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label16.ForeColor = Color.White;
+            label16.ImageAlign = ContentAlignment.MiddleLeft;
+            label16.Location = new Point(211, 90);
+            label16.Name = "label16";
+            label16.Size = new Size(89, 22);
+            label16.TabIndex = 17;
+            label16.Text = "Total Price :";
             // 
             // panel3
             // 
@@ -310,26 +312,28 @@
             panel3.Controls.Add(comboBox1);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(textBox1);
-            panel3.Location = new Point(443, 243);
+            panel3.Font = new Font("Poppins", 9.75F, FontStyle.Bold);
+            panel3.Location = new Point(462, 264);
             panel3.Name = "panel3";
-            panel3.Size = new Size(439, 273);
+            panel3.Size = new Size(661, 357);
             panel3.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Poppins", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(199, 166);
+            label4.Location = new Point(415, 230);
             label4.Name = "label4";
             label4.Size = new Size(56, 23);
             label4.TabIndex = 52;
             label4.Text = "label4";
+            label4.Click += label4_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Poppins", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(200, 101);
+            label2.Location = new Point(415, 147);
             label2.Name = "label2";
             label2.Size = new Size(55, 23);
             label2.TabIndex = 51;
@@ -339,22 +343,23 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(30, 31, 32);
-            label1.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(68, 104);
+            label1.Location = new Point(325, 121);
             label1.Name = "label1";
-            label1.Size = new Size(84, 19);
+            label1.Size = new Size(89, 22);
             label1.TabIndex = 50;
             label1.Text = "Total Price :";
             // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(94, 148, 255);
+            button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Poppins", 9F, FontStyle.Bold);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(325, 230);
+            button5.Location = new Point(550, 310);
             button5.Name = "button5";
             button5.Size = new Size(84, 29);
             button5.TabIndex = 49;
@@ -364,10 +369,11 @@
             // button4
             // 
             button4.BackColor = Color.FromArgb(94, 148, 255);
+            button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Poppins", 9F, FontStyle.Bold);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(226, 230);
+            button4.Location = new Point(451, 310);
             button4.Name = "button4";
             button4.Size = new Size(84, 29);
             button4.TabIndex = 48;
@@ -377,10 +383,11 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(94, 148, 255);
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Poppins", 9F, FontStyle.Bold);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(128, 230);
+            button3.Location = new Point(352, 310);
             button3.Name = "button3";
             button3.Size = new Size(84, 29);
             button3.TabIndex = 42;
@@ -391,12 +398,12 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.FromArgb(30, 31, 32);
-            label14.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label14.ForeColor = Color.White;
             label14.ImageAlign = ContentAlignment.MiddleLeft;
-            label14.Location = new Point(226, 31);
+            label14.Location = new Point(29, 121);
             label14.Name = "label14";
-            label14.Size = new Size(120, 19);
+            label14.Size = new Size(130, 22);
             label14.TabIndex = 44;
             label14.Text = "Available Chairs :";
             // 
@@ -404,12 +411,12 @@
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(30, 31, 32);
-            label13.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label13.ForeColor = Color.White;
             label13.ImageAlign = ContentAlignment.MiddleLeft;
-            label13.Location = new Point(29, 31);
+            label13.Location = new Point(29, 28);
             label13.Name = "label13";
-            label13.Size = new Size(78, 19);
+            label13.Size = new Size(84, 22);
             label13.TabIndex = 43;
             label13.Text = "Seat Type :";
             // 
@@ -418,7 +425,7 @@
             comboBox2.FlatStyle = FlatStyle.Flat;
             comboBox2.Font = new Font("Poppins", 8.25F);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(226, 53);
+            comboBox2.Location = new Point(29, 143);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(183, 27);
             comboBox2.TabIndex = 41;
@@ -427,12 +434,12 @@
             // 
             label18.AutoSize = true;
             label18.BackColor = Color.FromArgb(30, 31, 32);
-            label18.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label18.ForeColor = Color.White;
             label18.ImageAlign = ContentAlignment.MiddleLeft;
-            label18.Location = new Point(87, 170);
+            label18.Location = new Point(331, 197);
             label18.Name = "label18";
-            label18.Size = new Size(65, 19);
+            label18.Size = new Size(72, 22);
             label18.TabIndex = 47;
             label18.Text = "Change :";
             // 
@@ -450,21 +457,21 @@
             // 
             label17.AutoSize = true;
             label17.BackColor = Color.FromArgb(30, 31, 32);
-            label17.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label17.ForeColor = Color.White;
             label17.ImageAlign = ContentAlignment.MiddleLeft;
-            label17.Location = new Point(29, 135);
+            label17.Location = new Point(325, 28);
             label17.Name = "label17";
-            label17.Size = new Size(124, 19);
+            label17.Size = new Size(136, 22);
             label17.TabIndex = 46;
             label17.Text = "Payment Amount :";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Poppins", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(178, 130);
+            textBox1.Location = new Point(331, 56);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(231, 24);
+            textBox1.Size = new Size(204, 24);
             textBox1.TabIndex = 45;
             // 
             // BookingTicketPage
@@ -477,12 +484,12 @@
             Controls.Add(panel1);
             ForeColor = Color.White;
             Name = "BookingTicketPage";
-            Size = new Size(900, 534);
+            Size = new Size(1150, 648);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
