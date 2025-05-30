@@ -212,7 +212,6 @@ namespace MovieBookingSystem
 
             foreach (DataGridViewRow row in movieList.Rows)
             {
-                // Skip the new row (last empty row for input)
                 if (row.IsNewRow)
                     continue;
 
@@ -235,6 +234,17 @@ namespace MovieBookingSystem
             }
 
             ClearMovieSelection();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SeatSelection seatSelection = new SeatSelection();
+            seatSelection.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

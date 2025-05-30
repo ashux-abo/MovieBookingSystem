@@ -86,12 +86,6 @@
     <Compile Include="View\Admin\AdminUI.Designer.cs">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\AdminView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Admin\AdminView.Designer.cs">
-      <DependentUpon>AdminView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Login and Register Screen\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Admin\AdminView.resx">
-      <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login and Register Screen\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
