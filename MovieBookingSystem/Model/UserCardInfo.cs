@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace MovieBookingSystem.Model
 {
-    public class UserCardInfo
+    public class UserCardInfo 
     {
-        public static UserCardInfo cardCurrentInfo { get; set; }
+        public static UserCardInfo cardCurrentInfo { get; set; } 
         private string cardName;
         private string cardNum;
         private string expDate;
         private int cvvNumber;
 
-        public string CardName
+        public string CardName 
         {
             get { return cardName; } set { cardName = value; }
         }
 
-        public string CardNum
+        public string CardNum 
         {
             get { return cardNum; }
             set { cardNum = value; }
@@ -29,7 +29,7 @@ namespace MovieBookingSystem.Model
             get { return expDate; }
             set { expDate = value; }
         }
-        public int CvvNumber
+        public int CvvNumber 
         {
             get { return cvvNumber; }
             set { cvvNumber = value; }
@@ -40,17 +40,13 @@ namespace MovieBookingSystem.Model
             //default constructor
         }
 
-        public UserCardInfo(string cardName, string cardNumber, string expDate, int cvvNumber)
+        public UserCardInfo(string cardName, string cardNumber,
+            string expDate, int cvvNumber)
         {
             this.cardName = cardName;
             this.cardNum = cardNumber;
             this.expDate = expDate;
             this.cvvNumber = cvvNumber;
         }
-
-
-
-
-
     }
 }

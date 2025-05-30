@@ -7,7 +7,7 @@ using MovieBookingSystem.Model;
 
 namespace MovieBookingSystem.Control
 {
-    internal class MovieController
+    internal class MovieController : DatabaseHelper
     {
         private DatabaseHelper databaseHelper = new DatabaseHelper();
 
