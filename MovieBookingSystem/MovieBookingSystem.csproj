@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\AdminControl\AddMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AdminControl\AddMovie.Designer.cs">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\AdminControl\BookingTicketPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <Compile Include="Control\UserControl\SummaryControl.Designer.cs">
       <DependentUpon>SummaryControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Control\AdminControl\AddMovie.resx">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\AdminControl\BookingTicketPage.resx">
       <DependentUpon>BookingTicketPage.cs</DependentUpon>
     </EmbeddedResource>
