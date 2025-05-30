@@ -136,10 +136,10 @@ namespace MovieBookingSystem.Control.AdminControl
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Load the image from the selected file path
-                    guna2PictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    PictureBox1.Image = Image.FromFile(openFileDialog.FileName);
 
                     // Optional: Resize the image to fit the PictureBox
-                    guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 
 
                 }

@@ -91,9 +91,6 @@ namespace MovieBookingSystem
 
             // Add it to the panel
             panel3.Controls.Add(addMovieUC);
-
-
-            MessageBox.Show("Booking Ticket Button Clicked");
         }
     }
 }
