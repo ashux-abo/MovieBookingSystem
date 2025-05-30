@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dashboardBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -75,7 +74,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.guna2Button3);
-            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.guna2ImageButton1);
             this.panel1.Controls.Add(this.dashboardBtn);
@@ -102,24 +100,6 @@
             this.guna2Button3.TabIndex = 16;
             this.guna2Button3.Text = "LOG OUT";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(8, 245);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(144, 45);
-            this.guna2Button2.TabIndex = 15;
-            this.guna2Button2.Text = "CUSTOMERS";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -241,7 +221,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Button dashboardBtn;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;

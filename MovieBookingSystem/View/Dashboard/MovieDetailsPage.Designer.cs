@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDetailsPage));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.moviePrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BackBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -53,7 +54,6 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.RecommendationPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.moviePrice = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePicture)).BeginInit();
@@ -88,6 +88,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1350, 458);
             this.guna2Panel1.TabIndex = 5;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // moviePrice
+            // 
+            this.moviePrice.AutoSize = true;
+            this.moviePrice.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moviePrice.ForeColor = System.Drawing.Color.White;
+            this.moviePrice.Location = new System.Drawing.Point(330, 405);
+            this.moviePrice.Name = "moviePrice";
+            this.moviePrice.Size = new System.Drawing.Size(97, 37);
+            this.moviePrice.TabIndex = 24;
+            this.moviePrice.Text = "P350.00";
             // 
             // label1
             // 
@@ -402,17 +413,6 @@
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // moviePrice
-            // 
-            this.moviePrice.AutoSize = true;
-            this.moviePrice.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moviePrice.ForeColor = System.Drawing.Color.White;
-            this.moviePrice.Location = new System.Drawing.Point(401, 132);
-            this.moviePrice.Name = "moviePrice";
-            this.moviePrice.Size = new System.Drawing.Size(42, 19);
-            this.moviePrice.TabIndex = 24;
-            this.moviePrice.Text = "label3";
             // 
             // MovieDetailsPage
             // 

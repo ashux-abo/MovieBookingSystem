@@ -37,7 +37,6 @@ namespace MovieBookingSystem
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.timeSideBar = new System.Windows.Forms.Timer(this.components);
             this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -86,7 +85,6 @@ namespace MovieBookingSystem
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panel2.Controls.Add(this.guna2Button2);
-            this.panel2.Controls.Add(this.guna2Button4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Name = "panel2";
@@ -102,26 +100,11 @@ namespace MovieBookingSystem
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(535, 6);
+            this.guna2Button2.Location = new System.Drawing.Point(611, 6);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(145, 45);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Dashboard";
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(686, 6);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(145, 45);
-            this.guna2Button4.TabIndex = 9;
-            this.guna2Button4.Text = "Customer Support";
             // 
             // searchBox
             // 
@@ -213,7 +196,6 @@ namespace MovieBookingSystem
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Timer timeSideBar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

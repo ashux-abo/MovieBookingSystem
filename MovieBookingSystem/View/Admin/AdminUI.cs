@@ -82,10 +82,5 @@ namespace MovieBookingSystem
         {
             MessageBox.Show("Booking Ticket Button Clicked");
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Manage Movie Button Clicked");
-        }
     }
 }

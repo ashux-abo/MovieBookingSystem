@@ -60,7 +60,7 @@ namespace MovieBookingSystem
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.payment = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieList)).BeginInit();
             this.panel2.SuspendLayout();
@@ -287,7 +287,7 @@ namespace MovieBookingSystem
             this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.payment);
             this.panel3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.panel3.Location = new System.Drawing.Point(396, 229);
             this.panel3.Name = "panel3";
@@ -307,6 +307,7 @@ namespace MovieBookingSystem
             this.button1.TabIndex = 37;
             this.button1.Text = "SELECT SEATS";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -436,13 +437,13 @@ namespace MovieBookingSystem
             this.label17.TabIndex = 46;
             this.label17.Text = "Payment Amount :";
             // 
-            // textBox1
+            // payment
             // 
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(25, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 24);
-            this.textBox1.TabIndex = 45;
+            this.payment.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payment.Location = new System.Drawing.Point(25, 56);
+            this.payment.Name = "payment";
+            this.payment.Size = new System.Drawing.Size(157, 24);
+            this.payment.TabIndex = 45;
             // 
             // BookingTicketPage
             // 
@@ -494,7 +495,7 @@ namespace MovieBookingSystem
         private ComboBox comboBox2;
         private Label label18;
         private Label label17;
-        private TextBox textBox1;
+        private TextBox payment;
         private Guna.UI2.WinForms.Guna2TextBox searchMovies;
         private Button button1;
         private DataGridViewTextBoxColumn Title;
