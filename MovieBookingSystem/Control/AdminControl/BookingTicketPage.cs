@@ -80,24 +80,25 @@ namespace MovieBookingSystem
         private void BookingTicketPage_Load(object sender, EventArgs e)
         {
             LoadMovieDetails();
+            PopulateTimeAvailable();
         }
 
 
         private void movieList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if a valid row is clicked (not header)
+           
             if (e.RowIndex >= 0 && e.RowIndex < movieList.Rows.Count && !movieList.Rows[e.RowIndex].IsNewRow)
             {
                 DataGridViewRow selectedRow = movieList.Rows[e.RowIndex];
 
-                // Method 1: Get movie from Tag (recommended)
+        
                 if (selectedRow.Tag is Movie movie)
                 {
                     FDisplayMovieDetails(movie);
                 }
                 else
                 {
-                    // Method 2: Fallback - search by title
+                  
                     string selectedMovieTitle = selectedRow.Cells[0].Value?.ToString();
 
                     if (!string.IsNullOrEmpty(selectedMovieTitle))
@@ -112,11 +113,25 @@ namespace MovieBookingSystem
                 }
             }
         }
+        private void PopulateTimeAvailable()
+        {
+            List<string> item = new List<string>
+            {
+                "10:00 AM",
+                "01:00 PM",
+                "04:00 PM",
+                "07:00 PM",
+                "10:00 PM"
+            };
+            foreach(var availableTime in item)
+            {
+                comboBox2.Items.Add(availableTime);
+            }
+        }
         private void PopulateMovieGrid()
         {
             movieList.Rows.Clear();
 
-            // Configure DataGridView columns if not already done
             if (movieList.Columns.Count == 0)
             {
                 movieList.Columns.Add("Title", "Title");
@@ -127,7 +142,6 @@ namespace MovieBookingSystem
             foreach (var movie in movies)
             {
                 int rowIndex = movieList.Rows.Add(movie.Title, movie.Duration, movie.Rating);
-                // Store the movie object in the row's Tag property for easy retrieval
                 movieList.Rows[rowIndex].Tag = movie;
             }
         }
@@ -137,7 +151,6 @@ namespace MovieBookingSystem
             movieGenre.Text = movie.Genre;  
             moviePrice.Text = movie.Price;  
 
-            // Handle image loading with error checking
             try
             {
                 if (!string.IsNullOrEmpty(movie.ImagePath) && File.Exists(movie.ImagePath))
@@ -146,13 +159,13 @@ namespace MovieBookingSystem
                 }
                 else
                 {
-                    moviePoster.Image = null; // or set a default "no image" placeholder
+                    moviePoster.Image = null;
                 }
             }
             catch (Exception ex)
             {
                 moviePoster.Image = null;
-                // For debuggin purposes
+         
                 Console.WriteLine($"Error loading image: {ex.Message}");
             }
 
@@ -174,7 +187,7 @@ namespace MovieBookingSystem
         }
         private void clearSelectedMovie_Click(object sender, EventArgs e)
         {
-
+            ClearMovieSelection();
         }
 
         private void ClearMovieSelection()
@@ -196,18 +209,18 @@ namespace MovieBookingSystem
         {
             string searchQuery = searchMovies.Text.ToLower().Trim();
 
-            if (string.IsNullOrEmpty(searchQuery))
+
+            foreach (DataGridViewRow row in movieList.Rows)
             {
-                // Show all movies if search is empty
-                foreach (DataGridViewRow row in movieList.Rows)
+                // Skip the new row (last empty row for input)
+                if (row.IsNewRow)
+                    continue;
+
+                if (string.IsNullOrEmpty(searchQuery))
                 {
                     row.Visible = true;
                 }
-            }
-            else
-            {
-                // Filter movies based on search query
-                foreach (DataGridViewRow row in movieList.Rows)
+                else
                 {
                     if (row.Cells[0].Value != null)
                     {
@@ -221,7 +234,6 @@ namespace MovieBookingSystem
                 }
             }
 
-            // Clear selection when filtering
             ClearMovieSelection();
         }
     }

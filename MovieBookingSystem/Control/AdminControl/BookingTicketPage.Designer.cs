@@ -39,6 +39,7 @@ namespace MovieBookingSystem
             this.Rated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.clearSelectedMovie = new System.Windows.Forms.Button();
             this.moviePoster = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.movieTitle = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace MovieBookingSystem
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.clearSelectedMovie = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieList)).BeginInit();
             this.panel2.SuspendLayout();
@@ -168,9 +168,23 @@ namespace MovieBookingSystem
             this.panel2.Size = new System.Drawing.Size(567, 198);
             this.panel2.TabIndex = 1;
             // 
+            // clearSelectedMovie
+            // 
+            this.clearSelectedMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.clearSelectedMovie.FlatAppearance.BorderSize = 0;
+            this.clearSelectedMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearSelectedMovie.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold);
+            this.clearSelectedMovie.ForeColor = System.Drawing.Color.White;
+            this.clearSelectedMovie.Location = new System.Drawing.Point(471, 157);
+            this.clearSelectedMovie.Name = "clearSelectedMovie";
+            this.clearSelectedMovie.Size = new System.Drawing.Size(71, 25);
+            this.clearSelectedMovie.TabIndex = 37;
+            this.clearSelectedMovie.Text = " CLEAR";
+            this.clearSelectedMovie.UseVisualStyleBackColor = false;
+            this.clearSelectedMovie.Click += new System.EventHandler(this.clearSelectedMovie_Click);
+            // 
             // moviePoster
             // 
-            this.moviePoster.Image = global::MovieBookingSystem.Properties.Resources.spidermanposter;
             this.moviePoster.Location = new System.Drawing.Point(25, 29);
             this.moviePoster.Name = "moviePoster";
             this.moviePoster.Size = new System.Drawing.Size(117, 153);
@@ -199,9 +213,8 @@ namespace MovieBookingSystem
             this.movieTitle.ForeColor = System.Drawing.Color.White;
             this.movieTitle.Location = new System.Drawing.Point(287, 33);
             this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Size = new System.Drawing.Size(70, 22);
+            this.movieTitle.Size = new System.Drawing.Size(0, 22);
             this.movieTitle.TabIndex = 31;
-            this.movieTitle.Text = "movieTitle";
             // 
             // label24
             // 
@@ -234,9 +247,8 @@ namespace MovieBookingSystem
             this.moviePrice.ForeColor = System.Drawing.Color.White;
             this.moviePrice.Location = new System.Drawing.Point(287, 77);
             this.moviePrice.Name = "moviePrice";
-            this.moviePrice.Size = new System.Drawing.Size(54, 22);
+            this.moviePrice.Size = new System.Drawing.Size(0, 22);
             this.moviePrice.TabIndex = 30;
-            this.moviePrice.Text = "label26";
             // 
             // movieGenre
             // 
@@ -245,9 +257,8 @@ namespace MovieBookingSystem
             this.movieGenre.ForeColor = System.Drawing.Color.White;
             this.movieGenre.Location = new System.Drawing.Point(287, 55);
             this.movieGenre.Name = "movieGenre";
-            this.movieGenre.Size = new System.Drawing.Size(54, 22);
+            this.movieGenre.Size = new System.Drawing.Size(0, 22);
             this.movieGenre.TabIndex = 32;
-            this.movieGenre.Text = "label28";
             // 
             // label16
             // 
@@ -432,21 +443,6 @@ namespace MovieBookingSystem
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(157, 24);
             this.textBox1.TabIndex = 45;
-            // 
-            // clearSelectedMovie
-            // 
-            this.clearSelectedMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.clearSelectedMovie.FlatAppearance.BorderSize = 0;
-            this.clearSelectedMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearSelectedMovie.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold);
-            this.clearSelectedMovie.ForeColor = System.Drawing.Color.White;
-            this.clearSelectedMovie.Location = new System.Drawing.Point(471, 157);
-            this.clearSelectedMovie.Name = "clearSelectedMovie";
-            this.clearSelectedMovie.Size = new System.Drawing.Size(71, 25);
-            this.clearSelectedMovie.TabIndex = 37;
-            this.clearSelectedMovie.Text = " CLEAR";
-            this.clearSelectedMovie.UseVisualStyleBackColor = false;
-            this.clearSelectedMovie.Click += new System.EventHandler(this.clearSelectedMovie_Click);
             // 
             // BookingTicketPage
             // 
