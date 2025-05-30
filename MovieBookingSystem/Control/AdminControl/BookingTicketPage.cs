@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using MovieBookingSystem.Control;
 using MovieBookingSystem.Model;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace MovieBookingSystem
 {
@@ -19,6 +20,7 @@ namespace MovieBookingSystem
 
         private List<Movie> movies = new List<Movie>();
         private MovieController movieController = new MovieController();
+        private string connectionString = "Data Source=ASHLEY\\SQLEXPRESS;Initial Catalog=MovieBookingDB;Integrated Security=True;Connection Timeout=30;";
         public BookingTicketPage()
         {
             InitializeComponent();
@@ -241,10 +243,44 @@ namespace MovieBookingSystem
             SeatSelection seatSelection = new SeatSelection();
             seatSelection.ShowDialog();
         }
-
+        private double moviePriceValue = 0.00;
         private void button7_Click(object sender, EventArgs e)
         {
+            if (movieList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a movie first.");
+                return;
+            }
 
+            string query = "SELECT Price FROM Movies WHERE Title = @Title";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Title", movieList.SelectedRows[0].Cells["Title"].Value);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        if (double.TryParse(result.ToString(), out moviePriceValue))
+                        {
+                            moviePrice.Text = moviePriceValue.ToString("C"); // Currency format
+                            displayPrice.Text = moviePriceValue.ToString("F2"); // Decimal format
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid price format in database.");
+                            moviePriceValue = 0.00; // Reset on error
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Movie not found or price is null.");
+                        moviePriceValue = 0.00; // Reset on error
+                    }
+                }
+            }
         }
     }
 }
