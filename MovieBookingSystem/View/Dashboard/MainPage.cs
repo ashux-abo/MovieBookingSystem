@@ -356,6 +356,17 @@ namespace MovieBookingSystem
         {
 
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                this.Close();
+                LoginPage loginForm = new LoginPage();
+                loginForm.Show();
+            }
+        }
     }
 
 
