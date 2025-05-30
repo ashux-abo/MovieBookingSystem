@@ -40,7 +40,8 @@ namespace MovieBookingSystem
 
         private void AdminUI_Load(object sender, EventArgs e)
         {
-            
+            BookingTicketPage bookingTicketPage = new BookingTicketPage();
+            addUserControl(bookingTicketPage);
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -65,35 +66,26 @@ namespace MovieBookingSystem
 
         }
 
-       /* private void addUserControl(UserControl user)
+        private void addUserControl(UserControl user)
         {
             user.Dock = DockStyle.Fill;
             user.Anchor = AnchorStyles.None;
             panel3.Controls.Clear();
             panel3.Controls.Add(user);
             user.BringToFront();
-        }*/
+        }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Dashboard Button Clicked");
+            BookingTicketPage bookingTicketPage = new BookingTicketPage();
+            addUserControl(bookingTicketPage);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             panel3.Controls.Clear();
-
-            // Create an instance of the AddMovie user control
-            AddMovie addMovieUC = new AddMovie
-            {
-                Dock = DockStyle.Fill // Optional: make it fill the container
-            };
-
-            // Add it to the panel
-            panel3.Controls.Add(addMovieUC);
-
-
-            MessageBox.Show("Booking Ticket Button Clicked");
+            AddMovie addMovieUC = new AddMovie();
+            addUserControl(addMovieUC);
         }
     }
 }
