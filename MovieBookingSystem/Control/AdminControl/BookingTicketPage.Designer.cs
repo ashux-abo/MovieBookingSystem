@@ -51,7 +51,7 @@ namespace MovieBookingSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.displayPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -279,7 +279,7 @@ namespace MovieBookingSystem
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.displayPrice);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
@@ -321,16 +321,16 @@ namespace MovieBookingSystem
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
-            // label2
+            // displayPrice
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(127, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 23);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.displayPrice.AutoSize = true;
+            this.displayPrice.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
+            this.displayPrice.Location = new System.Drawing.Point(127, 246);
+            this.displayPrice.Name = "displayPrice";
+            this.displayPrice.Size = new System.Drawing.Size(55, 23);
+            this.displayPrice.TabIndex = 51;
+            this.displayPrice.Text = "label2";
+            this.displayPrice.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -487,7 +487,7 @@ namespace MovieBookingSystem
         private PictureBox moviePoster;
         private Panel panel3;
         private Label label4;
-        private Label label2;
+        private Label displayPrice;
         private Label label1;
         private Button button5;
         private Button button4;
