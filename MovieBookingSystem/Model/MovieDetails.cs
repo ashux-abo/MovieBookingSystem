@@ -14,6 +14,7 @@ namespace MovieBookingSystem.Model
         private string movieImage;
         private string movieGenre;
         private string movieDuration;
+        private string moviePrice;
 
         public string MovieTitle
         {
@@ -38,6 +39,11 @@ namespace MovieBookingSystem.Model
         {
             get { return movieDuration; }
             set { movieDuration = value; }
+        }
+        public string MoviePrice
+        {
+            get { return moviePrice; }
+            set { moviePrice = value; }
         }
 
         public MovieDetails()

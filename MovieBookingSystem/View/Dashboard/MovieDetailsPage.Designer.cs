@@ -53,6 +53,7 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.RecommendationPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.moviePrice = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePicture)).BeginInit();
@@ -63,6 +64,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.guna2Panel1.Controls.Add(this.moviePrice);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.BackBtn);
@@ -401,6 +403,17 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // moviePrice
+            // 
+            this.moviePrice.AutoSize = true;
+            this.moviePrice.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moviePrice.ForeColor = System.Drawing.Color.White;
+            this.moviePrice.Location = new System.Drawing.Point(401, 132);
+            this.moviePrice.Name = "moviePrice";
+            this.moviePrice.Size = new System.Drawing.Size(42, 19);
+            this.moviePrice.TabIndex = 24;
+            this.moviePrice.Text = "label3";
+            // 
             // MovieDetailsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +464,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label moviePrice;
     }
 }

@@ -39,7 +39,7 @@ namespace MovieBookingSystem
 
         private void AdminUI_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -57,6 +57,35 @@ namespace MovieBookingSystem
             {         
                 return;
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       /* private void addUserControl(UserControl user)
+        {
+            user.Dock = DockStyle.Fill;
+            user.Anchor = AnchorStyles.None;
+            panel3.Controls.Clear();
+            panel3.Controls.Add(user);
+            user.BringToFront();
+        }*/
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dashboard Button Clicked");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Booking Ticket Button Clicked");
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Manage Movie Button Clicked");
         }
     }
 }

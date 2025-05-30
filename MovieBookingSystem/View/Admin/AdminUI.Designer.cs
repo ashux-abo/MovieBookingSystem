@@ -32,16 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUI));
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dashboardBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.dashboardBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bookingTicketPage1 = new MovieBookingSystem.BookingTicketPage();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -64,42 +67,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(1055, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 24);
+            this.label6.Size = new System.Drawing.Size(112, 24);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Welcome Mr. Admin";
-            // 
-            // dashboardBtn
-            // 
-            this.dashboardBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.dashboardBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.dashboardBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.dashboardBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.dashboardBtn.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.dashboardBtn.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.dashboardBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dashboardBtn.Image = ((System.Drawing.Image)(resources.GetObject("dashboardBtn.Image")));
-            this.dashboardBtn.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.dashboardBtn.Location = new System.Drawing.Point(8, 143);
-            this.dashboardBtn.Name = "dashboardBtn";
-            this.dashboardBtn.Size = new System.Drawing.Size(144, 45);
-            this.dashboardBtn.TabIndex = 13;
-            this.dashboardBtn.Text = "DASHBOARD";
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(90, 90);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(17, 6);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(127, 122);
-            this.guna2ImageButton1.TabIndex = 0;
-            this.guna2ImageButton1.UseTransparentBackground = true;
+            this.label6.Text = "Welcome Admin";
             // 
             // panel1
             // 
@@ -149,6 +119,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(144, 45);
             this.guna2Button2.TabIndex = 15;
             this.guna2Button2.Text = "CUSTOMERS";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -166,6 +137,41 @@
             this.guna2Button1.Size = new System.Drawing.Size(144, 45);
             this.guna2Button1.TabIndex = 14;
             this.guna2Button1.Text = "ADD MOVIE";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(90, 90);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(17, 6);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(127, 122);
+            this.guna2ImageButton1.TabIndex = 0;
+            this.guna2ImageButton1.UseTransparentBackground = true;
+            // 
+            // dashboardBtn
+            // 
+            this.dashboardBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dashboardBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dashboardBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dashboardBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dashboardBtn.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dashboardBtn.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.dashboardBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dashboardBtn.Image = ((System.Drawing.Image)(resources.GetObject("dashboardBtn.Image")));
+            this.dashboardBtn.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.dashboardBtn.Location = new System.Drawing.Point(8, 143);
+            this.dashboardBtn.Name = "dashboardBtn";
+            this.dashboardBtn.Size = new System.Drawing.Size(144, 45);
+            this.dashboardBtn.TabIndex = 13;
+            this.dashboardBtn.Text = "DASHBOARD";
+            this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
             // panel2
             // 
@@ -184,6 +190,25 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.bookingTicketPage1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(160, 41);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1190, 688);
+            this.panel3.TabIndex = 16;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // bookingTicketPage1
+            // 
+            this.bookingTicketPage1.BackColor = System.Drawing.Color.Transparent;
+            this.bookingTicketPage1.ForeColor = System.Drawing.Color.White;
+            this.bookingTicketPage1.Location = new System.Drawing.Point(102, 63);
+            this.bookingTicketPage1.Name = "bookingTicketPage1";
+            this.bookingTicketPage1.Size = new System.Drawing.Size(986, 556);
+            this.bookingTicketPage1.TabIndex = 0;
+            // 
             // AdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +216,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.ControlBox = false;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -203,6 +229,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,5 +246,7 @@
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Panel panel3;
+        private BookingTicketPage bookingTicketPage1;
     }
 }

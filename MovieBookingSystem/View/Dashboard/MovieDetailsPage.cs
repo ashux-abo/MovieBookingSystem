@@ -96,6 +96,10 @@ namespace MovieBookingSystem
                         MessageBox.Show($"Error loading movie image: {ex.Message}");
                     }
                 }
+                if(moviePrice != null)
+                {
+                    moviePrice.Text = MovieDetails.movieCurrentInfo.MoviePrice; // Example price, replace with actual logic if needed
+                }
             }
             else
             {

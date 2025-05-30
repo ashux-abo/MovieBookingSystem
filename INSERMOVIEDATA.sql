@@ -1,0 +1,12 @@
+﻿INSERT INTO Movies (Title, Description, ImagePath, Rating, Duration, Genre, Price) 
+VALUES 
+('Spider-Man: Across the Spider-Verse', 'Miles Morales returns for the next chapter of the Oscar-winning Spider-Verse saga.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\spidermanposter1.jpeg', 'PG', '2h 20m', 'Animation, Action, Adventure', 350.00),
+('John Wick: Chapter 4', 'John Wick uncovers a path to defeating the High Table.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\john_wick_chapter_four_ver2.jpg', 'R-18', '2h 49m', 'Action, Crime, Thriller', 350.00),
+('Interstellar', 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity''s survival.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\interstellarposter.jpeg', 'PG-13', '2h 49m', 'Adventure, Drama, Sci-Fi', 350.00),
+('Avatar: The Way of Water', 'Jake Sully and Ney''tiri have formed a family and are doing anything to stay together.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\avatar_the_way_of_water.jpg', 'PG-13', '3h 12m', 'Action, Adventure, Fantasy', 350.00),
+('Super Mario Bros. Movie', 'A plumber named Mario travels through an underground labyrinth with his brother, Luigi, trying to save a captured princess.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\super_mario_bros_the_movie_ver2.jpg', 'PG', '1h 32m', 'Animation, Adventure, Comedy', 350.00),
+('Demon Slayer: Mugen Train', 'Tanjiro Kamado joins the Demon Slayer Corps to defeat demons and protect humanity.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\demon-slayer-mugen-train.jpg', 'R-18', '1h 57m', 'Animation, Action, Adventure', 350.00),
+('Final Destination 6', 'A group of friends escape death''s design and must find a way to survive.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\finaldestination6-exhibition-onesheet.jpg', 'R-18', '1h 30m', 'Horror, Thriller', 350.00),
+('Minecraft: The Movie', 'A group of friends embark on a journey to save their world from destruction.', 'C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\minecraftpost.png', 'PG', '1h 45m', 'Adventure, Family, Fantasy', 350.00);
+
+SELECT Title, Rating, Duration, Price FROM Movies;

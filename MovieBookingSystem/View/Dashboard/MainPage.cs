@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MovieBookingSystem.Model;
+using MovieBookingSystem.Control;
+using Guna.UI2.WinForms;
 
 namespace MovieBookingSystem
 {
     public partial class MainPage : Form
     {
         private List<Movie> movies = new List<Movie>();
+        private MovieBookingSystem.Control.MovieController movieController = new MovieBookingSystem.Control.MovieController(); 
         private const int SidebarWidth = 200;
 
-        private void FlowLayoutPanel(Control flowlayoutpanel)
+        private void FlowLayoutPanel(FlowLayoutPanel flowlayoutpanel)
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
@@ -46,7 +49,24 @@ namespace MovieBookingSystem
 
         private void InitializeMovies()
         {
-            // Add sample movies - you can replace these with your actual movie data
+            try
+            {
+                // Load movies from database instead of hardcoded data
+                movies = movieController.GetMovies();
+                if (movies.Count == 0)
+                {
+                    MessageBox.Show("No movies found in database.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading movies from database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadDefaultMovies();
+            }
+        }
+        private void LoadDefaultMovies()
+        {
+            // Fallback method with hardcoded movies in case database fails
             movies.Add(new Movie
             {
                 Title = "Spider-Man: Across the Spider-Verse",
@@ -54,7 +74,8 @@ namespace MovieBookingSystem
                 Description = "Miles Morales returns for the next chapter of the Oscar-winning Spider-Verse saga.",
                 Rating = "PG",
                 Duration = "2h 20m",
-                Genre = "Animation, Action, Adventure" // Added Genre property
+                Genre = "Animation, Action, Adventure",
+                Price = "$12.99"
             });
 
             movies.Add(new Movie
@@ -64,60 +85,12 @@ namespace MovieBookingSystem
                 Description = "A live-action adaptation of the popular video game Minecraft.",
                 Rating = "PG-13",
                 Duration = "1h 45m",
-                Genre = "Adventure, Comedy, Family"
+                Genre = "Adventure, Comedy, Family",
+                Price = "$11.99"
             });
 
-            movies.Add(new Movie
-            {
-                Title = "Final Destination: Bloodline",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\finaldestination6-exhibition-onesheet.jpg",
-                Description = "Plagued by a violent and recurring nightmare, a college student heads home to track\r\ndown the one person who might be able to break the cycle of death and save her\r\nfamily from the grisly demise that inevitably awaits them all.",
-                Rating = "PG-13",
-                Duration = "2h 28m",
-                Genre = "Horror, Thriller"
-            });
-
-            movies.Add(new Movie
-            {
-                Title = "Interstellar",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\interstellarposter.jpeg",
-                Description = "A team of explorers travel through a wormhole in search of a new home for humanity.",
-                Rating = "PG-13",
-                Duration = "2h 49m",
-                Genre = "Sci-Fi, Drama"
-            });
-
-            movies.Add(new Movie
-            {
-                Title = "John Wick: Chapter 4",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\john_wick_chapter_four_ver2.jpg",
-                Description = "John Wick faces his toughest challenge yet as he fights for survival against a powerful new enemy.",
-                Rating = "R",
-                Duration = "2h 49m",
-                Genre = "Action, Crime, Thriller"
-            });
-
-            movies.Add(new Movie
-            {
-                Title = "Avatar: The Way of Water",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\avatar_the_way_of_water.jpg",
-                Description = "Jake Sully and Neytiri must protect their family from new threats in the oceans of Pandora.",
-                Rating = "PG-13",
-                Duration = "3h 12m",
-                Genre = "Sci-Fi, Adventure, Action"
-            });
-
-            movies.Add(new Movie
-            {
-                Title = "The Super Mario Bros. Movie",
-                ImagePath = "C:\\Users\\dulay\\source\\repos\\MovieBookingSystem\\MovieBookingSystem\\Resources\\super_mario_bros_the_movie_ver2.jpg",
-                Description = "Mario and Luigi embark on an adventure to save the Mushroom Kingdom.",
-                Rating = "PG",
-                Duration = "1h 32m",
-                Genre = "Animation, Adventure, Comedy"
-            });
+            // Naka static na lang to para hindi mag duplicate sa database
         }
-
         private void SetupMovieCards()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -141,19 +114,35 @@ namespace MovieBookingSystem
             card.ShadowDecoration.Enabled = true;
             card.ShadowDecoration.Depth = 10;
             card.Margin = new Padding(10);
-            card.Tag = movie; // Store the movie object in the Tag property for easy access
+            card.Tag = movie; 
 
             var pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             pictureBox.Size = new Size(cardWidth, cardHeight - 60);
             pictureBox.Location = new Point(0, 0);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox.Image = Image.FromFile(movie.ImagePath);
+
+            try
+            {
+                if (!string.IsNullOrEmpty(movie.ImagePath) && System.IO.File.Exists(movie.ImagePath))
+                {
+                    pictureBox.Image = Image.FromFile(movie.ImagePath);
+                }
+                else
+                {
+                    pictureBox.BackColor = Color.Gray;
+                }
+            }
+            catch (Exception ex)
+            {
+                pictureBox.BackColor = Color.Gray;
+            }
+
             pictureBox.BorderRadius = 10;
 
             var titleLabel = new Label();
             titleLabel.Text = movie.Title;
             titleLabel.ForeColor = Color.White;
-            titleLabel.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            titleLabel.Font = new Font("Poppins", 10, FontStyle.Bold);
             titleLabel.Location = new Point(10, cardHeight - 50);
             titleLabel.AutoSize = true;
 
@@ -176,16 +165,14 @@ namespace MovieBookingSystem
 
             return card;
         }
-
-        private void ShowMoviePreview(Movie movie, Control card)
+        private void ShowMoviePreview(Movie movie, Guna2Panel card)
         {
             HideMoviePreview(); // Hide any existing preview first
 
             var preview = new Guna.UI2.WinForms.Guna2Panel();
-            preview.Size = new Size(300, 400);
+            preview.Size = new Size(300, 450); // Increased height to accommodate price
             preview.Location = new Point(card.Right + 20, card.Top);
 
-            // Adjust the position if it goes off-screen
             if (preview.Right > this.ClientSize.Width)
             {
                 preview.Location = new Point(card.Left - 320, card.Top);
@@ -200,14 +187,14 @@ namespace MovieBookingSystem
             var titleLabel = new Label();
             titleLabel.Text = movie.Title;
             titleLabel.ForeColor = Color.White;
-            titleLabel.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            titleLabel.Font = new Font("Poppins", 14, FontStyle.Bold);
             titleLabel.Location = new Point(20, 20);
             titleLabel.AutoSize = true;
 
             var descLabel = new Label();
             descLabel.Text = movie.Description;
             descLabel.ForeColor = Color.White;
-            descLabel.Font = new Font("Segoe UI", 10);
+            descLabel.Font = new Font("Poppins", 10);
             descLabel.Location = new Point(20, 60);
             descLabel.Size = new Size(260, 100);
             descLabel.AutoSize = false;
@@ -215,25 +202,39 @@ namespace MovieBookingSystem
             var ratingLabel = new Label();
             ratingLabel.Text = $"Rating: {movie.Rating}";
             ratingLabel.ForeColor = Color.White;
-            ratingLabel.Font = new Font("Segoe UI", 10);
+            ratingLabel.Font = new Font("Poppins", 10);
             ratingLabel.Location = new Point(20, 170);
             ratingLabel.AutoSize = true;
 
             var durationLabel = new Label();
             durationLabel.Text = $"Duration: {movie.Duration}";
             durationLabel.ForeColor = Color.White;
-            durationLabel.Font = new Font("Segoe UI", 10);
+            durationLabel.Font = new Font("Poppins", 10);
             durationLabel.Location = new Point(20, 200);
             durationLabel.AutoSize = true;
+
+            var genreLabel = new Label();
+            genreLabel.Text = $"Genre: {movie.Genre}";
+            genreLabel.ForeColor = Color.White;
+            genreLabel.Font = new Font("Poppins", 10);
+            genreLabel.Location = new Point(20, 230);
+            genreLabel.AutoSize = true;
+
+            var priceLabel = new Label();
+            priceLabel.Text = $"Price: {movie.Price}";
+            priceLabel.ForeColor = Color.White; // Green color for price
+            priceLabel.Font = new Font("Poppins", 12, FontStyle.Bold);
+            priceLabel.Location = new Point(20, 260);
+            priceLabel.AutoSize = true;
 
             // Add a "Book Now" button
             var bookButton = new Guna.UI2.WinForms.Guna2Button();
             bookButton.Text = "Book Now";
             bookButton.Size = new Size(260, 40);
-            bookButton.Location = new Point(20, 240);
+            bookButton.Location = new Point(20, 300);
             bookButton.FillColor = Color.FromArgb(227, 58, 77);
             bookButton.BorderRadius = 5;
-            bookButton.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            bookButton.Font = new Font("Poppins", 10, FontStyle.Bold);
             bookButton.Click += (s, e) => OpenMovieDetails(movie);
             bookButton.Cursor = Cursors.Hand;
 
@@ -241,10 +242,10 @@ namespace MovieBookingSystem
             var detailsButton = new Guna.UI2.WinForms.Guna2Button();
             detailsButton.Text = "View Details";
             detailsButton.Size = new Size(260, 40);
-            detailsButton.Location = new Point(20, 290);
+            detailsButton.Location = new Point(20, 350);
             detailsButton.FillColor = Color.FromArgb(94, 148, 255);
             detailsButton.BorderRadius = 5;
-            detailsButton.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            detailsButton.Font = new Font("Poppins", 10, FontStyle.Bold);
             detailsButton.Click += (s, e) => OpenMovieDetails(movie);
             detailsButton.Cursor = Cursors.Hand;
 
@@ -252,6 +253,8 @@ namespace MovieBookingSystem
             preview.Controls.Add(descLabel);
             preview.Controls.Add(ratingLabel);
             preview.Controls.Add(durationLabel);
+            preview.Controls.Add(genreLabel);
+            preview.Controls.Add(priceLabel);
             preview.Controls.Add(bookButton);
             preview.Controls.Add(detailsButton);
 
@@ -262,13 +265,22 @@ namespace MovieBookingSystem
         private void HideMoviePreview()
         {
             // Find and remove any existing preview panel
-            foreach (Control ctrl in this.Controls)
+            var controlsToRemove = new List<object>();
+
+            foreach (object ctrl in this.Controls)
             {
-                if (ctrl.Name == "previewPanel")
+                if (ctrl is Guna2Panel panel && panel.Name == "previewPanel")
                 {
-                    this.Controls.Remove(ctrl);
-                    ctrl.Dispose();
-                    break;
+                    controlsToRemove.Add(ctrl);
+                }
+            }
+
+            foreach (object ctrl in controlsToRemove)
+            {
+                if (ctrl is Guna2Panel panel)
+                {
+                    this.Controls.Remove(panel);
+                    panel.Dispose();
                 }
             }
         }
@@ -280,24 +292,22 @@ namespace MovieBookingSystem
                 movie.Title,
                 movie.Description,
                 movie.ImagePath,
-                movie.Genre, 
+                movie.Genre,
                 movie.Duration
             );
-
-            // Create and show the movie details form
             MovieDetailsPage detailsPage = new MovieDetailsPage();
             detailsPage.Show();
         }
 
-        private void SetupSearchBar()
+       private void SetupSearchBar()
         {
             searchBox.PlaceholderText = "Search movies...";
             searchBox.TextChanged += (s, e) =>
             {
                 string searchText = searchBox.Text.ToLower();
-                foreach (Control control in flowLayoutPanel1.Controls)
+                foreach (Guna2Panel control in flowLayoutPanel1.Controls)
                 {
-                    if (control is Guna.UI2.WinForms.Guna2Panel card)
+                    if (control is Guna2Panel card)
                     {
                         var titleLabel = card.Controls.OfType<Label>().FirstOrDefault();
                         if (titleLabel != null)
@@ -307,6 +317,11 @@ namespace MovieBookingSystem
                     }
                 }
             };
+        }
+        public void RefreshMovies()
+        {
+            InitializeMovies();
+            SetupMovieCards();
         }
 
         private void MainPage_Load(object sender, EventArgs e)
@@ -343,6 +358,7 @@ namespace MovieBookingSystem
         }
     }
 
+
     public class Movie
     {
         public string Title { get; set; }
@@ -351,5 +367,6 @@ namespace MovieBookingSystem
         public string Rating { get; set; }
         public string Duration { get; set; }
         public string Genre { get; set; }
+        public string Price { get; internal set; }
     }
 }
