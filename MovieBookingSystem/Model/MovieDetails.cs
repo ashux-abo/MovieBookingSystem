@@ -46,6 +46,8 @@ namespace MovieBookingSystem.Model
             set { moviePrice = value; }
         }
 
+        public int MovieId { get; internal set; }
+
         public MovieDetails()
         {
             //default constructor

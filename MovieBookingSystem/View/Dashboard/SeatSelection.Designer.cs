@@ -91,6 +91,7 @@
             this.seatSelectionPanel.Name = "seatSelectionPanel";
             this.seatSelectionPanel.Size = new System.Drawing.Size(849, 329);
             this.seatSelectionPanel.TabIndex = 2;
+            this.seatSelectionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.seatSelectionPanel_Paint);
             // 
             // cinemaScreen
             // 
