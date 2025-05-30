@@ -14,7 +14,7 @@ This project is a movie booking system designed for users to browse available mo
 2. Browse movies and select the ones you want to book tickets for.
 
 ## Functional Requirements
-- [ ] Admin User Access
+- [x] Admin User Access
 - [x] Seat Selection
 - [x] Online Payment Method
 - [x] Now Showing Movie
