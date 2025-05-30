@@ -308,13 +308,13 @@ namespace MovieBookingSystem
                         else
                         {
                             MessageBox.Show("Invalid price format in database.");
-                            moviePriceValue = 0.00; // Reset on error
+                            moviePriceValue = 0.00; 
                         }
                     }
                     else
                     {
                         MessageBox.Show("Movie not found or price is null.");
-                        moviePriceValue = 0.00; // Reset on error
+                        moviePriceValue = 0.00; 
                     }
                 }
             }
@@ -324,7 +324,7 @@ namespace MovieBookingSystem
         {
             var calc = new CalculateFee(price, payment);
             double change = calc.CalculateTotalFee();
-            displayChange.Text = change.ToString("C"); 
+            displayChange.Text = change.ToString("F2"); 
         }
 
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -339,7 +339,7 @@ namespace MovieBookingSystem
                 MessageBox.Show("Please enter a payment amount.");
                 return;
             }
-            CalculateAndDisplayChange(350.00, Convert.ToInt32(payment.Text)); // Assuming 0 as payment for now, replace with actual payment logic
+            CalculateAndDisplayChange(350.00, Convert.ToInt32(payment.Text)); 
         }
     }
 }
