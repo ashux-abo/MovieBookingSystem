@@ -53,7 +53,6 @@ namespace MovieBookingSystem
             this.displayChange = new System.Windows.Forms.Label();
             this.displayPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -281,7 +280,6 @@ namespace MovieBookingSystem
             this.panel3.Controls.Add(this.displayChange);
             this.panel3.Controls.Add(this.displayPrice);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label14);
@@ -316,9 +314,8 @@ namespace MovieBookingSystem
             this.displayChange.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.displayChange.Location = new System.Drawing.Point(126, 269);
             this.displayChange.Name = "displayChange";
-            this.displayChange.Size = new System.Drawing.Size(56, 23);
+            this.displayChange.Size = new System.Drawing.Size(0, 23);
             this.displayChange.TabIndex = 52;
-            this.displayChange.Text = "label4";
             this.displayChange.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // displayPrice
@@ -345,20 +342,6 @@ namespace MovieBookingSystem
             this.label1.Text = "Total Price :";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(471, 269);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 25);
-            this.button5.TabIndex = 49;
-            this.button5.Text = "CLEAR";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -368,10 +351,11 @@ namespace MovieBookingSystem
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(387, 269);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(72, 25);
+            this.button4.Size = new System.Drawing.Size(155, 25);
             this.button4.TabIndex = 48;
             this.button4.Text = "RECEIPT";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -490,7 +474,6 @@ namespace MovieBookingSystem
         private Label displayChange;
         private Label displayPrice;
         private Label label1;
-        private Button button5;
         private Button button4;
         private Button button3;
         private Label label14;

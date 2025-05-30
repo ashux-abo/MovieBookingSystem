@@ -125,5 +125,15 @@ namespace PaymentMethod
         {
             this.ParentForm.Close();
         }
+
+        private void CreditDebitBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PaypalBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

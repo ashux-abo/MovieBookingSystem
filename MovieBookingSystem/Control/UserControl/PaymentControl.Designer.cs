@@ -33,6 +33,7 @@ namespace PaymentMethod
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -56,7 +57,6 @@ namespace PaymentMethod
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.ExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditDebitLogo)).BeginInit();
@@ -93,6 +93,26 @@ namespace PaymentMethod
             this.panel1.Size = new System.Drawing.Size(771, 463);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // ExpDate
+            // 
+            this.ExpDate.BackColor = System.Drawing.Color.Transparent;
+            this.ExpDate.BorderColor = System.Drawing.Color.White;
+            this.ExpDate.BorderRadius = 15;
+            this.ExpDate.BorderThickness = 1;
+            this.ExpDate.Checked = true;
+            this.ExpDate.FillColor = System.Drawing.Color.Black;
+            this.ExpDate.Font = new System.Drawing.Font("Poppins", 9F);
+            this.ExpDate.ForeColor = System.Drawing.Color.White;
+            this.ExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.ExpDate.Location = new System.Drawing.Point(51, 294);
+            this.ExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.Size = new System.Drawing.Size(327, 31);
+            this.ExpDate.TabIndex = 94;
+            this.ExpDate.UseTransparentBackground = true;
+            this.ExpDate.Value = new System.DateTime(2025, 5, 28, 23, 6, 21, 186);
             // 
             // label1
             // 
@@ -165,9 +185,11 @@ namespace PaymentMethod
             this.PaypalBtn.ForeColor = System.Drawing.Color.White;
             this.PaypalBtn.Location = new System.Drawing.Point(392, 155);
             this.PaypalBtn.Name = "PaypalBtn";
+            this.PaypalBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PaypalBtn.Size = new System.Drawing.Size(328, 31);
             this.PaypalBtn.TabIndex = 89;
             this.PaypalBtn.Text = "      Pay with Paypal";
+            this.PaypalBtn.Click += new System.EventHandler(this.PaypalBtn_Click);
             // 
             // CreditDebitBtn
             // 
@@ -180,9 +202,11 @@ namespace PaymentMethod
             this.CreditDebitBtn.ForeColor = System.Drawing.Color.White;
             this.CreditDebitBtn.Location = new System.Drawing.Point(70, 155);
             this.CreditDebitBtn.Name = "CreditDebitBtn";
+            this.CreditDebitBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CreditDebitBtn.Size = new System.Drawing.Size(328, 31);
             this.CreditDebitBtn.TabIndex = 88;
             this.CreditDebitBtn.Text = "       Credit or Debit Card";
+            this.CreditDebitBtn.Click += new System.EventHandler(this.CreditDebitBtn_Click);
             // 
             // guna2CheckBox1
             // 
@@ -209,7 +233,7 @@ namespace PaymentMethod
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(431, 384);
             this.guna2Button2.Name = "guna2Button2";
@@ -268,7 +292,7 @@ namespace PaymentMethod
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(542, 384);
             this.guna2Button1.Name = "guna2Button1";
@@ -414,26 +438,6 @@ namespace PaymentMethod
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(46, 18);
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Billing";
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.BackColor = System.Drawing.Color.Transparent;
-            this.ExpDate.BorderColor = System.Drawing.Color.White;
-            this.ExpDate.BorderRadius = 15;
-            this.ExpDate.BorderThickness = 1;
-            this.ExpDate.Checked = true;
-            this.ExpDate.FillColor = System.Drawing.Color.Black;
-            this.ExpDate.Font = new System.Drawing.Font("Poppins", 9F);
-            this.ExpDate.ForeColor = System.Drawing.Color.White;
-            this.ExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ExpDate.Location = new System.Drawing.Point(51, 294);
-            this.ExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ExpDate.Name = "ExpDate";
-            this.ExpDate.Size = new System.Drawing.Size(327, 31);
-            this.ExpDate.TabIndex = 94;
-            this.ExpDate.UseTransparentBackground = true;
-            this.ExpDate.Value = new System.DateTime(2025, 5, 28, 23, 6, 21, 186);
             // 
             // PaymentControl
             // 

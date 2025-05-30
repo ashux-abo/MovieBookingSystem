@@ -341,5 +341,10 @@ namespace MovieBookingSystem
             }
             CalculateAndDisplayChange(350.00, Convert.ToInt32(payment.Text)); 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Buy Successfully "+ "\nTitle: " + movieTitle.Text +"\nPayment: " + payment.Text);
+        }
     }
 }
