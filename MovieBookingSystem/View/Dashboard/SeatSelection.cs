@@ -25,6 +25,11 @@ namespace MovieBookingSystem
             MovieTitle = movieTitle;
             ShowTime = showTime;
         }
+        public SeatSelection(DateTime showTime)
+        {
+            InitializeComponent();
+            ShowTime = showTime;
+        }
         public SeatSelection()
         {
             InitializeComponent();

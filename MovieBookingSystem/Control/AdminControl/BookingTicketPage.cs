@@ -11,13 +11,12 @@ using System.Data.SqlClient;
 using MovieBookingSystem.Control;
 using MovieBookingSystem.Model;
 using System.IO;
-using System.Data.SqlClient;
 
 namespace MovieBookingSystem
 {
     public partial class BookingTicketPage : UserControl
     {
-
+        private string selectedTime = "";
         private List<Movie> movies = new List<Movie>();
         private MovieController movieController = new MovieController();
         private string connectionString = "Data Source=ASHLEY\\SQLEXPRESS;Initial Catalog=MovieBookingDB;Integrated Security=True;Connection Timeout=30;";
@@ -171,13 +170,11 @@ namespace MovieBookingSystem
                 Console.WriteLine($"Error loading image: {ex.Message}");
             }
 
-            // Optional: Highlight the selected row
             foreach (DataGridViewRow row in movieList.Rows)
             {
                 row.Selected = false;
             }
 
-            // Find and select the current movie row
             foreach (DataGridViewRow row in movieList.Rows)
             {
                 if (row.Tag is Movie rowMovie && rowMovie.Title == movie.Title)
@@ -237,11 +234,51 @@ namespace MovieBookingSystem
 
             ClearMovieSelection();
         }
+        private DateTime ConvertTimeStringToDateTime(string timeString)
+        {
+            DateTime dateTime = DateTime.Now;
 
+            switch (timeString)
+            {
+                case "10:00 AM":
+                    return dateTime = dateTime.Date.AddHours(10);
+                case "11:45 AM":
+                    return dateTime = dateTime.Date.AddHours(11).AddMinutes(45);
+                case "1:00PM":
+                    return dateTime = dateTime.Date.AddHours(13);
+                case "2:45PM":
+                    return dateTime = dateTime.Date.AddHours(14).AddMinutes(45);
+                case "4:00PM":
+                    return dateTime = dateTime.Date.AddHours(16);
+                default:
+                    return dateTime = dateTime.AddHours(10);
+            }
+
+        }
+      
         private void button1_Click(object sender, EventArgs e)
         {
-            SeatSelection seatSelection = new SeatSelection();
-            seatSelection.ShowDialog();
+            if (string.IsNullOrEmpty(selectedTime))
+            {
+                MessageBox.Show("Please select a showtime first.");
+                return;
+            }
+
+            if (movieList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a movie first.");
+                return;
+            }
+            try
+            {
+                DateTime showTime = ConvertTimeStringToDateTime(selectedTime);
+                SeatSelection seatSelection = new SeatSelection(showTime);
+                seatSelection.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening seat selection: {ex.Message}");
+            }
         }
         private double moviePriceValue = 0.00;
         private void button7_Click(object sender, EventArgs e)
@@ -281,6 +318,28 @@ namespace MovieBookingSystem
                     }
                 }
             }
+        }
+
+        private void CalculateAndDisplayChange(double price, double payment)
+        {
+            var calc = new CalculateFee(price, payment);
+            double change = calc.CalculateTotalFee();
+            displayChange.Text = change.ToString("C"); 
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            selectedTime = comboBox2.SelectedItem?.ToString() ?? "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {   
+            if(payment.Text == "")
+            {
+                MessageBox.Show("Please enter a payment amount.");
+                return;
+            }
+            CalculateAndDisplayChange(350.00, Convert.ToInt32(payment.Text)); // Assuming 0 as payment for now, replace with actual payment logic
         }
     }
 }
