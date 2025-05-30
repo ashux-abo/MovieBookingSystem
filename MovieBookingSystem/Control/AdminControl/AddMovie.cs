@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,23 @@ namespace MovieBookingSystem.Control.AdminControl
 {
     public partial class AddMovie : UserControl
     {
+        private bool isImageImported = false;
+
         public AddMovie()
         {
             InitializeComponent();
+
+            movieIDtxt.KeyPress += OnlyAllowNumbers;
+            pricetxt.KeyPress += OnlyAllowNumbers;
+            capacitytxt.KeyPress += OnlyAllowNumbers;
+        }
+        private void OnlyAllowNumbers(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys like Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignore the key
+            }
         }
 
         private void AddMovie_Load(object sender, EventArgs e)
@@ -43,13 +58,29 @@ namespace MovieBookingSystem.Control.AdminControl
 
         private void addBTN_Click(object sender, EventArgs e)
         {
+            // Validate input fields including image check
             if (string.IsNullOrWhiteSpace(movieIDtxt.Text) ||
-               string.IsNullOrWhiteSpace(movieNametxt.Text) ||
-               genretxt.SelectedIndex == -1 ||
-               string.IsNullOrWhiteSpace(pricetxt.Text) ||
-               string.IsNullOrWhiteSpace(capacitytxt.Text))
+                string.IsNullOrWhiteSpace(movieNametxt.Text) ||
+                genretxt.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(pricetxt.Text) ||
+                string.IsNullOrWhiteSpace(capacitytxt.Text) ||
+                PictureBox1.Image == null)
             {
                 MessageBox.Show("Fill in all fields.");
+                return;
+            }
+
+            if (int.TryParse(capacitytxt.Text, out int capacityValue))
+            {
+                if (capacityValue > 100)
+                {
+                    MessageBox.Show("Capacity cannot exceed 100.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid number in Capacity.");
                 return;
             }
 
@@ -61,7 +92,6 @@ namespace MovieBookingSystem.Control.AdminControl
                 pricetxt.Text,
                 capacitytxt.Text
             );
-
 
             ClearFields();
         }
@@ -83,33 +113,60 @@ namespace MovieBookingSystem.Control.AdminControl
 
         private void deleteBTN_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this Movie", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
-            {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this Movie?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
+            if (result == DialogResult.Yes)
+            {
                 if (guna2DataGridView2.SelectedRows.Count > 0)
                 {
-                    foreach (DataGridViewRow row in guna2DataGridView2.SelectedRows)
+                    // Loop backwards in case multiple rows are selected
+                    for (int i = guna2DataGridView2.SelectedRows.Count - 1; i >= 0; i--)
                     {
-                        guna2DataGridView2.Rows.RemoveAt(guna2DataGridView2.CurrentRow.Index);
-
-                        ClearFields();
-
+                        guna2DataGridView2.Rows.RemoveAt(guna2DataGridView2.SelectedRows[i].Index);
                     }
 
-
+                    ClearFields();
                 }
-
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void clearBTN_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to clear all?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
+            if (result == DialogResult.Yes)
+            {
+                // Clear all text fields
+                movieIDtxt.Clear();
+                movieNametxt.Clear();
+                pricetxt.Clear();
+                capacitytxt.Clear();
+                genretxt.SelectedIndex = -1;
+
+                // Clear the DataGridView rows
+                guna2DataGridView2.Rows.Clear();
+
+                // Optionally clear image and reset image tracking
+                guna2PictureBox1.Image = null;
+                isImageImported = false;
+            }
+            // If "No" is clicked, do nothing
         }
         private void ClearFields()
         {
-            /*   guna2PictureBox1.Clear();*/
+            PictureBox1.Image = null; // Clear the PictureBox image
             movieIDtxt.Clear();
             movieNametxt.Clear();
             genretxt.SelectedIndex = -1;
@@ -136,13 +193,12 @@ namespace MovieBookingSystem.Control.AdminControl
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Load the image from the selected file path
-                    guna2PictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-
+                    PictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    PictureBox1.ImageLocation = openFileDialog.FileName;
                     // Optional: Resize the image to fit the PictureBox
-                    guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-
-
+                    PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                 }
+
             }
         }
 
