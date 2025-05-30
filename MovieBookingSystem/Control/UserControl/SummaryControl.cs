@@ -70,7 +70,6 @@ namespace PaymentMethod
 
         private void ShowSummaryDetails()
         {
-            // First try to use the userInfo passed via constructor
             UserInfo infoToShow = userInfo ?? UserInfo.CurrentUser;
 
 
@@ -83,7 +82,6 @@ namespace PaymentMethod
             }
             else
             {
-                // Handle case when no user info is available
                 OwnerName.Text = "No name provided";
                 SummaryAddress.Text = "No address provided";
                 SummaryPhone.Text = "No phone provided";
