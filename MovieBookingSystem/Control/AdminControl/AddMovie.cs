@@ -20,14 +20,32 @@ namespace MovieBookingSystem.Control.AdminControl
 
         private void AddMovie_Load(object sender, EventArgs e)
         {
+            if (guna2DataGridView2.Columns.Count == 0)
+            {
+                guna2DataGridView2.Columns.Add("MovieID", "Movie ID");
+                guna2DataGridView2.Columns.Add("MovieName", "Movie Name");
+                guna2DataGridView2.Columns.Add("Genre", "Genre");
+                guna2DataGridView2.Columns.Add("Price", "Price");
+                guna2DataGridView2.Columns.Add("Capacity", "Capacity");
+            }
 
+
+            if (genretxt.Items.Count == 0)
+            {
+                genretxt.Items.AddRange(new object[]
+                {
+                    "Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance"
+                });
+
+                genretxt.SelectedIndex = 0;
+            }
         }
 
         private void addBTN_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(movieIDtxt.Text) ||
                string.IsNullOrWhiteSpace(movieNametxt.Text) ||
-               txtGenre.SelectedIndex == -1 ||
+               genretxt.SelectedIndex == -1 ||
                string.IsNullOrWhiteSpace(pricetxt.Text) ||
                string.IsNullOrWhiteSpace(capacitytxt.Text))
             {
@@ -36,7 +54,7 @@ namespace MovieBookingSystem.Control.AdminControl
             }
 
             // Add row to DataGridView
-            guna2DataGridView1.Rows.Add(
+            guna2DataGridView2.Rows.Add(
                 movieIDtxt.Text,
                 movieNametxt.Text,
                 genretxt.SelectedItem.ToString(),
