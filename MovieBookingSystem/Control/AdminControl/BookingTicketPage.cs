@@ -241,5 +241,10 @@ namespace MovieBookingSystem
             SeatSelection seatSelection = new SeatSelection();
             seatSelection.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

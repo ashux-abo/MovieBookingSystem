@@ -205,6 +205,7 @@ namespace MovieBookingSystem
             this.button7.TabIndex = 34;
             this.button7.Text = "SELECT MOVIE";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // movieTitle
             // 
