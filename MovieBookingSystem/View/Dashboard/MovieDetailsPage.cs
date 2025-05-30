@@ -10,10 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MovieBookingSystem.Model;
 using PaymentMethod;
+using Guna.UI2.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 namespace MovieBookingSystem
 {
     public partial class MovieDetailsPage : Form
     {
+        private string selectedTime = "";
+        private Guna2Button selectedTimeButton = null; 
         public MovieDetailsPage()
         {
             InitializeComponent();
@@ -36,7 +40,7 @@ namespace MovieBookingSystem
                "CINEMA 1", "CINEMA 2", "CINEMA 3", "CINEMA 4", "CINEMA 5", "CINEMA 6",
             };
             availableCinema.Items.Insert(0, "Select Cinema"); 
-            availableCinema.SelectedIndex = 0; // Set default selected index to the first item
+            availableCinema.SelectedIndex = 0; 
             foreach (var item in items)
             {
                 availableCinema.Items.Add(item);
@@ -52,7 +56,7 @@ namespace MovieBookingSystem
             "SM City Novaliches", "SM City San Fernando", "SM City Clark", "SM City Pampanga", "SM City Batangas"
             };
             guna2ComboBox1.Items.Insert(0, "Select Location"); 
-            guna2ComboBox1.SelectedIndex = 0; // Set default selected index to the first item
+            guna2ComboBox1.SelectedIndex = 0;
             foreach (var item in items)
             {
                 guna2ComboBox1.Items.Add(item);
@@ -60,7 +64,6 @@ namespace MovieBookingSystem
         }
         private void LoadMovieDetails()
         {
-            // Check if movie data is available
             if (MovieDetails.movieCurrentInfo != null)
             {
    
@@ -76,11 +79,11 @@ namespace MovieBookingSystem
                 if (movieDuration != null)
                 {
                     movieDuration.Text = MovieDetails.movieCurrentInfo.MovieDuration;
-                    Console.WriteLine($"Duration set to: {MovieDetails.movieCurrentInfo.MovieDuration}"); // Debug line
+                    Console.WriteLine($"Duration set to: {MovieDetails.movieCurrentInfo.MovieDuration}");
                 }
                 else
                 {
-                    Console.WriteLine("movieDuration control is null - check control name in designer"); // Debug line
+                    Console.WriteLine("movieDuration control is null - check control name in designer"); 
                 }
 
 
@@ -98,7 +101,7 @@ namespace MovieBookingSystem
                 }
                 if(moviePrice != null)
                 {
-                    moviePrice.Text = MovieDetails.movieCurrentInfo.MoviePrice; // Example price, replace with actual logic if needed
+                    moviePrice.Text = MovieDetails.movieCurrentInfo.MoviePrice;
                 }
             }
             else
@@ -120,8 +123,65 @@ namespace MovieBookingSystem
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            SeatSelection seatSelection = new SeatSelection();
-            seatSelection.Show();
+            if (string.IsNullOrEmpty(selectedTime))
+            {
+                MessageBox.Show("Please select a showtime first.");
+                return;
+            }
+
+            if (MovieDetails.movieCurrentInfo == null)
+            {
+                MessageBox.Show("No movie selected.");
+                return;
+            }
+
+            try
+            {
+                int movieId = MovieDetails.movieCurrentInfo.MovieId; 
+                string movieTitle = MovieDetails.movieCurrentInfo.MovieTitle;
+
+                DateTime showTime = ConvertTimeStringToDateTime(selectedTime);
+
+                SeatSelection seatSelection = new SeatSelection(movieId, movieTitle, showTime);
+                seatSelection.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening seat selection: {ex.Message}");
+            }
+        }
+
+        private DateTime ConvertTimeStringToDateTime(string timeString)
+        {
+            DateTime dateTime = DateTime.Now;
+
+            switch (timeString) 
+            {
+                case "10:00 AM":
+                   return dateTime = dateTime.Date.AddHours(10);
+                case "11:45 AM":
+                   return dateTime = dateTime.Date.AddHours(11).AddMinutes(45);
+                case "1:00PM":
+                   return dateTime = dateTime.Date.AddHours(13);
+                case "2:45PM":
+                   return dateTime = dateTime.Date.AddHours(14).AddMinutes(45);
+                case "4:00PM":
+                    return dateTime = dateTime.Date.AddHours(16);
+                default:
+                    return dateTime = dateTime.AddHours(10);
+            }
+
+        }
+        private void SelectTimeButton(Guna2Button clickedButton, string time)
+        {
+            if (selectedTimeButton != null)
+            {
+                selectedTimeButton.FillColor = Color.Transparent; 
+            }
+
+            selectedTimeButton = clickedButton;
+            selectedTimeButton.FillColor = Color.White; 
+            selectedTime = time;
         }
 
         private void movieTitle_Click(object sender, EventArgs e)
@@ -142,30 +202,29 @@ namespace MovieBookingSystem
             LoadRecommendationMoive();
         }
 
-        private string seatSelected = "";
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            seatSelected = "10:00 AM";
+            SelectTimeButton((Guna2Button)sender, "10:00 AM");
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            seatSelected = "11:45 AM";
+           SelectTimeButton((Guna2Button)sender, "11:45 AM");
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            seatSelected = "1:00PM";
+            SelectTimeButton((Guna2Button)sender, "1:00PM");
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            seatSelected = "2:45PM";
+            SelectTimeButton((Guna2Button)sender, "2:45PM");
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            seatSelected = "4:00PM";
+            SelectTimeButton((Guna2Button)sender, "4:00PM");
         }
 
         private void RecommendationPanel_Paint(object sender, PaintEventArgs e)
@@ -191,7 +250,7 @@ namespace MovieBookingSystem
                 PictureBox picture = new PictureBox();
                 picture.Image = Image.FromFile(item);
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
-                picture.Size = new Size(170, 230); // Adjust size as needed
+                picture.Size = new Size(170, 230); 
                 picture.Margin = new Padding(10);
 
                 RecommendationPanel.Controls.Add(picture);

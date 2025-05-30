@@ -79,6 +79,7 @@
       <DependentUpon>BookingTicketPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\MovieController.cs" />
+    <Compile Include="Model\CalculateFee.cs" />
     <Compile Include="Model\DatabaseHelper.cs" />
     <Compile Include="View\Admin\AdminUI.cs">
       <SubType>Form</SubType>

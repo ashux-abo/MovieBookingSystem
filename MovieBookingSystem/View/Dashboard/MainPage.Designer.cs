@@ -42,6 +42,7 @@ namespace MovieBookingSystem
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.logoutBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -68,6 +69,7 @@ namespace MovieBookingSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2ControlBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -84,7 +86,7 @@ namespace MovieBookingSystem
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.panel2.Controls.Add(this.guna2Button2);
+            this.panel2.Controls.Add(this.logoutBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Name = "panel2";
@@ -100,7 +102,7 @@ namespace MovieBookingSystem
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(611, 6);
+            this.guna2Button2.Location = new System.Drawing.Point(-25, -6);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(145, 45);
             this.guna2Button2.TabIndex = 7;
@@ -164,6 +166,22 @@ namespace MovieBookingSystem
             this.guna2Panel1.TabIndex = 6;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint_1);
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.logoutBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.logoutBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.logoutBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.logoutBtn.FillColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Font = new System.Drawing.Font("Poppins", 9F);
+            this.logoutBtn.ForeColor = System.Drawing.Color.White;
+            this.logoutBtn.Location = new System.Drawing.Point(1286, 6);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(77, 45);
+            this.logoutBtn.TabIndex = 0;
+            this.logoutBtn.Text = "LOGOUT";
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +219,6 @@ namespace MovieBookingSystem
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox searchBox;
+        private Guna.UI2.WinForms.Guna2Button logoutBtn;
     }
 }

@@ -50,7 +50,7 @@ namespace MovieBookingSystem
             this.label16 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.displayChange = new System.Windows.Forms.Label();
             this.displayPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -278,7 +278,7 @@ namespace MovieBookingSystem
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.displayChange);
             this.panel3.Controls.Add(this.displayPrice);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button5);
@@ -310,16 +310,16 @@ namespace MovieBookingSystem
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // displayChange
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(126, 269);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 23);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
+            this.displayChange.AutoSize = true;
+            this.displayChange.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
+            this.displayChange.Location = new System.Drawing.Point(126, 269);
+            this.displayChange.Name = "displayChange";
+            this.displayChange.Size = new System.Drawing.Size(56, 23);
+            this.displayChange.TabIndex = 52;
+            this.displayChange.Text = "label4";
+            this.displayChange.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // displayPrice
             // 
@@ -327,9 +327,8 @@ namespace MovieBookingSystem
             this.displayPrice.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold);
             this.displayPrice.Location = new System.Drawing.Point(127, 246);
             this.displayPrice.Name = "displayPrice";
-            this.displayPrice.Size = new System.Drawing.Size(55, 23);
+            this.displayPrice.Size = new System.Drawing.Size(0, 23);
             this.displayPrice.TabIndex = 51;
-            this.displayPrice.Text = "label2";
             this.displayPrice.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -387,6 +386,7 @@ namespace MovieBookingSystem
             this.button3.TabIndex = 42;
             this.button3.Text = "BUY";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label14
             // 
@@ -410,6 +410,7 @@ namespace MovieBookingSystem
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(157, 27);
             this.comboBox2.TabIndex = 41;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
             // label18
             // 
@@ -486,7 +487,7 @@ namespace MovieBookingSystem
         private Label movieGenre;
         private PictureBox moviePoster;
         private Panel panel3;
-        private Label label4;
+        private Label displayChange;
         private Label displayPrice;
         private Label label1;
         private Button button5;
