@@ -20,5 +20,6 @@ This project is a movie booking system designed for users to browse available mo
 - [x] Now Showing Movie
 - [x] Booking and Payment Confirmation
 - [x] Theater Location
+- [x] Input Validation
 - [ ] Customer Support
 - [ ] Reviews and Recommendations
